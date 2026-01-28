@@ -205,18 +205,18 @@ Dopo:  Deployment guide
 
 ## Checklist Completamento
 
-- [x] Creazione cartella pages/
-- [x] Creazione cartella docs/
-- [x] Copia 9 HTML file con percorsi relativi corretti
-- [x] Creazione 20 file MD bilingui (IT + EN)
-- [x] Aggiornamento index.html links
-- [x] Rimozione emoji da tutti i file
-- [x] Rimozione file HTML duplicati da root
-- [x] Rimozione file MD duplicati da root
-- [x] Creazione README.md entry point
-- [x] Creazione DOCS-INDEX.md
-- [x] Aggiornamento DOCS-INDEX.md con tutte le categorie
-- [x] Creazione questo file MIGRATION_NOTES.md
+- Creazione cartella pages/
+- Creazione cartella docs/
+- Copia 9 HTML file con percorsi relativi corretti
+- Creazione 20 file MD bilingui (IT + EN)
+- Aggiornamento index.html links
+- Rimozione emoji da tutti i file
+- Rimozione file HTML duplicati da root
+- Rimozione file MD duplicati da root
+- Creazione README.md entry point
+- Creazione DOCS-INDEX.md
+- Aggiornamento DOCS-INDEX.md con tutte le categorie
+- Creazione questo file MIGRATION_NOTES.md
 
 ## Verifiche Effettuate
 

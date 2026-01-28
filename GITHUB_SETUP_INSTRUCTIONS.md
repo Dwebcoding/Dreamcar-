@@ -4,14 +4,14 @@ Questo file contiene le istruzioni finali per pubblicare il progetto su GitHub e
 
 ## Pre-requisiti Soddisfatti
 
-- [x] Repository Git inizializzato localmente
-- [x] 2 commit effettuati (Initial + Project Summary)
-- [x] Struttura organizzata (pages/, docs/, css/, js/, Images/)
-- [x] Documentazione bilingue completa (IT + EN)
-- [x] .gitignore configurato
-- [x] .github/ templates pronti
-- [x] Nessun emoji nel codice
-- [x] Percorsi relativi corretti
+- Repository Git inizializzato localmente
+- 2 commit effettuati (Initial + Project Summary)
+- Struttura organizzata (pages/, docs/, css/, js/, Images/)
+- Documentazione bilingue completa (IT + EN)
+- .gitignore configurato
+- .github/ templates pronti
+- Nessun emoji nel codice
+- Percorsi relativi corretti
 
 ---
 

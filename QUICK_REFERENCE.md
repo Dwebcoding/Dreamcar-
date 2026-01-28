@@ -113,18 +113,18 @@ git push -u origin main
 
 ---
 
-## ✅ Verifiche Fatte
+## Verifiche Fatte
 
-- [x] 9 HTML in pages/
-- [x] 21 MD in docs/
-- [x] 10 coppie bilingual (IT+EN)
-- [x] Nessun emoji rimasto
-- [x] Percorsi relativi corretti
-- [x] Link verificati
-- [x] Git repository inizializzato
-- [x] 4 commit effettuati
-- [x] .gitignore configurato
-- [x] .github/ templates pronti
+- 9 HTML in pages/
+- 21 MD in docs/
+- 10 coppie bilingual (IT+EN)
+- Nessun emoji rimasto
+- Percorsi relativi corretti
+- Link verificati
+- Git repository inizializzato
+- 4 commit effettuati
+- .gitignore configurato
+- .github/ templates pronti
 
 ---
 
