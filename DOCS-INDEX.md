@@ -21,6 +21,11 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 1. **[DEPLOYMENT.md](DEPLOYMENT.md)** - Guida deploy completa
 2. **[GITHUB-SETUP.md](GITHUB-SETUP.md)** - Primo push su GitHub
 
+### Voglio Modificare il Footer
+
+1. **[FOOTER_QUICKSTART.md](FOOTER_QUICKSTART.md)** - Modifica footer in 1 minuto
+2. **[FOOTER_DINAMICO.md](FOOTER_DINAMICO.md)** - Documentazione completa sistema footer
+
 ---
 
 ## Guida Completa ai File
@@ -140,6 +145,34 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 - Troubleshooting comune
 
 **Quando usarlo**: Prima di pushare su GitHub
+
+---
+
+#### [FOOTER_QUICKSTART.md](FOOTER_QUICKSTART.md)
+**Cosa**: Guida rapida modifica footer  
+**Per chi**: Chiunque debba aggiornare i dati nel footer  
+**Contiene**:
+- Modifica dati aziendali (1 minuto)
+- Aggiornamento social media
+- Cambio orari apertura
+- Istruzioni chiare e dirette
+
+**Quando usarlo**: Per cambiare dati nel footer su tutte le pagine
+
+---
+
+#### [FOOTER_DINAMICO.md](FOOTER_DINAMICO.md)
+**Cosa**: Documentazione completa sistema footer dinamico  
+**Per chi**: Sviluppatori e maintainer  
+**Contiene**:
+- Come funziona il sistema
+- Struttura file footer.js
+- Personalizzazioni avanzate
+- Aggiungere/rimuovere social media
+- Troubleshooting
+- Best practices
+
+**Quando usarlo**: Per modifiche avanzate al footer o problemi tecnici
 
 ---
 

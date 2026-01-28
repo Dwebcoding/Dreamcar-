@@ -27,14 +27,30 @@
         const curtainContainer = document.querySelector(CONFIG.SELECTORS.curtainContainer);
         const mainContent = document.querySelector(CONFIG.SELECTORS.mainContent);
 
-        if (!curtainContainer || !mainContent) return;
+        if (!curtainContainer || !mainContent) {
+            console.error('Curtain or main content element not found');
+            return;
+        }
 
+        console.log('Starting curtain animation...');
         curtainContainer.classList.add('animate');
 
         setTimeout(() => {
+            console.log('Animation complete, showing main content');
             curtainContainer.style.display = 'none';
             mainContent.classList.remove('hidden');
+            mainContent.style.display = 'block'; // Force display block as fallback
         }, CONFIG.CURTAIN_ANIMATION_DURATION);
+
+        // Safety timeout: if animation doesn't complete, force it after 3 seconds
+        setTimeout(() => {
+            if (curtainContainer.style.display !== 'none') {
+                console.warn('Force closing curtain due to timeout');
+                curtainContainer.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                mainContent.style.display = 'block';
+            }
+        }, 3000);
     };
 
     /**
