@@ -1,24 +1,24 @@
-# 🎯 DREAMCAR SITE - QUICK REFERENCE CARD
+# DREAMCAR SITE - QUICK REFERENCE CARD
 
-## 📍 Dove Si Trovano Le Cose
+## Dove Si Trovano Le Cose
 
 ```
 Root Directory (index.html solo qui!)
 │
-├── 📄 README.md ........................ Leggi prima questo
-├── 📄 DOCS-INDEX.md ................... Indice documentazione
-├── 📄 FINAL_CHECKLIST.md ............ Checklist completamento
-├── 📄 PROJECT_SUMMARY.md ............ Riepilogo progetto
-├── 📄 MIGRATION_NOTES.md ............ Note su restructuring
-├── 📄 GITHUB_SETUP_INSTRUCTIONS.md .. Guide setup GitHub
+├── README.md ........................ Leggi prima questo
+├── DOCS-INDEX.md ................... Indice documentazione
+├── FINAL_CHECKLIST.md ............ Checklist completamento
+├── PROJECT_SUMMARY.md ............ Riepilogo progetto
+├── MIGRATION_NOTES.md ............ Note su restructuring
+├── GITHUB_SETUP_INSTRUCTIONS.md .. Guide setup GitHub
 │
-├── 📁 pages/ (Tutte le pagine HTML qui)
+├── pages/ (Tutte le pagine HTML qui)
 │   ├── servizi.html
 │   ├── preventivo.html
 │   ├── chi-siamo.html
 │   └── ... 6 altri file
 │
-├── 📁 docs/ (Tutta la documentazione qui)
+├── docs/ (Tutta la documentazione qui)
 │   ├── DOCS-INDEX.md (Indice)
 │   ├── README_IT.md / README_EN.md
 │   ├── TECHNICAL_IT.md / TECHNICAL_EN.md
@@ -26,47 +26,47 @@ Root Directory (index.html solo qui!)
 │   ├── QUICKSTART_IT.md / QUICKSTART_EN.md
 │   └── ... 15 altri file
 │
-├── 📁 css/
+├── css/
 │   └── style.css (Tutti gli stili)
 │
-├── 📁 js/
+├── js/
 │   ├── script.js (Main)
 │   ├── models.expanded.js (1500+ auto)
 │   └── ... altri 5 file
 │
-├── 📁 Images/
+├── Images/
 │   ├── Logo/ (3 file)
 │   └── BackGround/ (4 file)
 │
-└── 📁 scripts/
+└── scripts/
     └── import-carquery.js
 ```
 
 ---
 
-## 🔗 Link Importanti
+## Link Importanti
 
 ### Leggere Per Primo
-- 📖 **README.md** → Entry point del progetto
-- 📋 **FINAL_CHECKLIST.md** → Cosa è stato fatto
-- 📍 **GITHUB_SETUP_INSTRUCTIONS.md** → Come pubblicare su GitHub
+- **README.md** → Entry point del progetto
+- **FINAL_CHECKLIST.md** → Cosa è stato fatto
+- **GITHUB_SETUP_INSTRUCTIONS.md** → Come pubblicare su GitHub
 
 ### Documentazione Tecnica
-- 🛠️ **docs/TECHNICAL_IT.md** → Architettura (Italiano)
-- 🛠️ **docs/TECHNICAL_EN.md** → Architecture (English)
-- 🚀 **docs/DEPLOYMENT_IT.md** → Hosting guide (Italiano)
+- **docs/TECHNICAL_IT.md** → Architettura (Italiano)
+- **docs/TECHNICAL_EN.md** → Architecture (English)
+- **docs/DEPLOYMENT_IT.md** → Hosting guide (Italiano)
 
 ### Setup Veloce
-- ⚡ **docs/QUICKSTART_IT.md** → 5 minuti setup (Italiano)
-- ⚡ **docs/QUICKSTART_EN.md** → 5 minutes setup (English)
+- **docs/QUICKSTART_IT.md** → 5 minuti setup (Italiano)
+- **docs/QUICKSTART_EN.md** → 5 minutes setup (English)
 
 ### Git Workflow
-- 🐙 **docs/GITHUB-SETUP_IT.md** → Workflow Git (Italiano)
-- 🐙 **docs/GITHUB-SETUP_EN.md** → Git workflow (English)
+- **docs/GITHUB-SETUP_IT.md** → Workflow Git (Italiano)
+- **docs/GITHUB-SETUP_EN.md** → Git workflow (English)
 
 ---
 
-## ⚡ Comandi Velocissimi
+## Comandi Velocissimi
 
 ### Visualizzare Struttura
 ```powershell
@@ -96,7 +96,7 @@ git push -u origin main
 
 ---
 
-## 📊 Snapshot Finale
+## Snapshot Finale
 
 | Elemento | Valore |
 |----------|--------|
@@ -128,7 +128,7 @@ git push -u origin main
 
 ---
 
-## 🚀 Prossimo Step
+## Prossimo Step
 
 ### OGGI - Pubblicare su GitHub
 
@@ -162,13 +162,13 @@ git push -u origin main
 5. **Accedi al sito**
    - https://USERNAME.github.io/dreamcar-site
 
-**Fatto! Il sito è online!** 🎉
+**Fatto! Il sito è online!**
 
 ---
 
-## 📚 Cosa Contiene Ogni Cartella
+## Cosa Contiene Ogni Cartella
 
-### 📁 pages/
+### pages/
 Le **9 pagine HTML** del sito (NON la homepage):
 - `preventivo.html` - Form preventivo
 - `servizi.html` - Servizi offerti
@@ -182,7 +182,7 @@ Le **9 pagine HTML** del sito (NON la homepage):
 
 **Link:** Accedi da `index.html` → link "pages/servizi.html" etc.
 
-### 📁 docs/
+### docs/
 La **documentazione completa** (23 file):
 - `DOCS-INDEX.md` - Indice di navigazione
 - Pari di file bilingual (10):
@@ -191,11 +191,11 @@ La **documentazione completa** (23 file):
 
 **Uso:** Leggi il file che ti serve (IT o EN)
 
-### 📁 css/
+### css/
 Stili del sito:
 - `style.css` - Tutti gli stili CSS
 
-### 📁 js/
+### js/
 Codice JavaScript:
 - `script.js` - Main script
 - `models.expanded.js` - 86 brand + 1500+ modelli auto
@@ -203,23 +203,23 @@ Codice JavaScript:
 - `quote-form.js` - Gestione form
 - E altri 3 file
 
-### 📁 Images/
+### Images/
 Media assets:
 - `Logo/` - 3 file di logo
 - `BackGround/` - 4 immagini background
 
-### 📁 scripts/
+### scripts/
 Build scripts:
 - `import-carquery.js` - Script per importare dati auto
 
-### 📁 .github/
+### .github/
 Template GitHub:
 - Issue templates
 - Pull request template
 
 ---
 
-## 🎯 Checklist Rapido
+## Checklist Rapido
 
 Prima di pubblicare su GitHub, verifica:
 - [ ] Hai letto README.md
@@ -232,7 +232,7 @@ Prima di pubblicare su GitHub, verifica:
 
 ---
 
-## 💡 Pro Tips
+## Pro Tips
 
 1. **Per aggiungere una nuova pagina:**
    - Crea `pages/nuova-pagina.html`
@@ -260,7 +260,7 @@ Prima di pubblicare su GitHub, verifica:
 
 ---
 
-## ❓ FAQ Rapida
+## FAQ Rapida
 
 **D: Dove metto una nuova pagina?**
 R: In `pages/` cartella, con percorsi relativi `../`
@@ -285,7 +285,7 @@ R: NO - Usa Font Awesome icons nei HTML, mantieni i MD senza emoji
 
 ---
 
-## 📞 Help
+## Help
 
 Se sei perso:
 1. Leggi **README.md**
@@ -297,6 +297,6 @@ Se sei perso:
 
 **Creato:** Gennaio 2026  
 **Versione:** 1.0.0  
-**Status:** ✅ PRONTO PER GITHUB
+**Status:** PRONTO PER GITHUB
 
-**Buona fortuna! 🚀**
+**Buona fortuna! **

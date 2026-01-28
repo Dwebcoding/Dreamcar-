@@ -1,31 +1,31 @@
-# 📚 Indice Documentazione DreamCar
+# Indice Documentazione DreamCar
 
 Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
-## 🎯 Per Iniziare
+## Per Iniziare
 
 ### Sono Nuovo - Da Dove Inizio?
 
-1. **[QUICKSTART.md](QUICKSTART.md)** - ⚡ Start qui! Setup in 5 minuti
-2. **[README.md](README.md)** - 📖 Overview completo del progetto
-3. **[STRUTTURA.md](STRUTTURA.md)** - 🗂️ Organizzazione file e cartelle
+1. **[QUICKSTART.md](QUICKSTART.md)** - Start qui! Setup in 5 minuti
+2. **[README.md](README.md)** - Overview completo del progetto
+3. **[STRUTTURA.md](STRUTTURA.md)** - Organizzazione file e cartelle
 
 ### Voglio Contribuire
 
-1. **[CONTRIBUTING.md](CONTRIBUTING.md)** - 🤝 Come contribuire
-2. **[TECHNICAL.md](TECHNICAL.md)** - 🔧 Documentazione tecnica dettagliata
-3. **[OTTIMIZZAZIONI.md](OTTIMIZZAZIONI.md)** - ✨ Cosa è stato ottimizzato
+1. **[CONTRIBUTING.md](CONTRIBUTING.md)** - Come contribuire
+2. **[TECHNICAL.md](TECHNICAL.md)** - Documentazione tecnica dettagliata
+3. **[OTTIMIZZAZIONI.md](OTTIMIZZAZIONI.md)** - Cosa è stato ottimizzato
 
 ### Voglio Fare il Deploy
 
-1. **[DEPLOYMENT.md](DEPLOYMENT.md)** - 🚀 Guida deploy completa
-2. **[GITHUB-SETUP.md](GITHUB-SETUP.md)** - 🐙 Primo push su GitHub
+1. **[DEPLOYMENT.md](DEPLOYMENT.md)** - Guida deploy completa
+2. **[GITHUB-SETUP.md](GITHUB-SETUP.md)** - Primo push su GitHub
 
 ---
 
-## 📖 Guida Completa ai File
+## Guida Completa ai File
 
-### 🚀 Getting Started
+### Getting Started
 
 #### [QUICKSTART.md](QUICKSTART.md)
 **Cosa**: Setup rapido in 5 minuti  
@@ -58,7 +58,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-### 🔧 Documentazione Tecnica
+### Documentazione Tecnica
 
 #### [TECHNICAL.md](TECHNICAL.md)
 **Cosa**: Deep dive tecnico completo  
@@ -107,7 +107,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-### 🚀 Deploy & GitHub
+### Deploy & GitHub
 
 #### [DEPLOYMENT.md](DEPLOYMENT.md)
 **Cosa**: Guida deploy completa  
@@ -143,7 +143,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-### 🤝 Contribuzioni
+### Contribuzioni
 
 #### [CONTRIBUTING.md](CONTRIBUTING.md)
 **Cosa**: Linee guida contribuzione  
@@ -175,7 +175,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-### 📄 Configurazione & Legal
+### Configurazione & Legal
 
 #### [LICENSE](LICENSE)
 **Cosa**: Licenza MIT  
@@ -214,7 +214,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-### 📦 Package Management
+### Package Management
 
 #### [package.json](package.json)
 **Cosa**: Configurazione npm  
@@ -229,16 +229,16 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-## 🗺️ Roadmap di Lettura
+## Roadmap di Lettura
 
-### 📱 Uso Base (Utente Finale)
+### Uso Base (Utente Finale)
 ```
 1. QUICKSTART.md       (5 min)
 2. README.md           (10 min)
 3. [Usa il sito!]
 ```
 
-### 👨‍💻 Sviluppo Locale
+### Sviluppo Locale
 ```
 1. QUICKSTART.md       (5 min)
 2. README.md           (10 min)
@@ -247,7 +247,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 5. [Sviluppa!]
 ```
 
-### 🤝 Contribuire al Progetto
+### Contribuire al Progetto
 ```
 1. README.md           (10 min)
 2. CONTRIBUTING.md     (10 min)
@@ -256,7 +256,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 5. [Fork & PR!]
 ```
 
-### 🚀 Deploy in Produzione
+### Deploy in Produzione
 ```
 1. QUICKSTART.md       (5 min)
 2. GITHUB-SETUP.md     (15 min)
@@ -264,7 +264,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 4. [Deploy!]
 ```
 
-### 🔧 Manutenzione Progetto
+### Manutenzione Progetto
 ```
 1. TECHNICAL.md        (full)
 2. OTTIMIZZAZIONI.md   (10 min)
@@ -275,7 +275,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-## 📊 Quick Reference
+## Quick Reference
 
 | Domanda | File |
 |---------|------|
@@ -292,7 +292,7 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-## 🎯 Quick Links
+## Quick Links
 
 ### Documentazione Esterna
 - [Git Documentation](https://git-scm.com/doc)
@@ -307,16 +307,16 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-## 📞 Hai Ancora Dubbi?
+## Hai Ancora Dubbi?
 
-1. 🔍 Cerca nella documentazione (Ctrl+F)
-2. 📖 Leggi [TECHNICAL.md](TECHNICAL.md) sezione troubleshooting
-3. 🐛 [Apri una issue](https://github.com/yourusername/dreamcar-site/issues)
-4. 💬 Chiedi nella community
+1. Cerca nella documentazione (Ctrl+F)
+2. Leggi [TECHNICAL.md](TECHNICAL.md) sezione troubleshooting
+3. [Apri una issue](https://github.com/yourusername/dreamcar-site/issues)
+4. Chiedi nella community
 
 ---
 
-## ✅ Checklist Documentazione
+## Checklist Documentazione
 
 ### Ho letto:
 - [ ] README.md - overview progetto
@@ -337,6 +337,6 @@ Benvenuto! Questa è la guida completa a tutta la documentazione del progetto.
 
 ---
 
-**Tutta la documentazione è sempre accessibile dalla root del progetto! 📚**
+**Tutta la documentazione è sempre accessibile dalla root del progetto!**
 
 *Ultimo aggiornamento: Gennaio 28, 2026*

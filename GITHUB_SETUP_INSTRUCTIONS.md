@@ -1,8 +1,8 @@
-# 🚀 DREAMCAR SITE - READY FOR GITHUB
+# DREAMCAR SITE - READY FOR GITHUB
 
 Questo file contiene le istruzioni finali per pubblicare il progetto su GitHub e abilitare GitHub Pages.
 
-## ✅ Pre-requisiti Soddisfatti
+## Pre-requisiti Soddisfatti
 
 - [x] Repository Git inizializzato localmente
 - [x] 2 commit effettuati (Initial + Project Summary)
@@ -15,7 +15,7 @@ Questo file contiene le istruzioni finali per pubblicare il progetto su GitHub e
 
 ---
 
-## 📋 Passaggi per Publicare su GitHub
+## Passaggi per Publicare su GitHub
 
 ### Passo 1: Creare Repository su GitHub
 
@@ -79,7 +79,7 @@ Se hai un dominio personalizzato (es: www.dreamcar.it):
 
 ---
 
-## 📁 File Structure su GitHub
+## File Structure su GitHub
 
 Una volta pushato, il repository avrà questa struttura:
 
@@ -135,7 +135,7 @@ dreamcar-site/
 
 ---
 
-## 🔗 URL Importanti
+## URL Importanti
 
 Dopo il push e l'abilitazione di GitHub Pages:
 
@@ -149,7 +149,7 @@ Dopo il push e l'abilitazione di GitHub Pages:
 
 ---
 
-## 📝 Comandi Git Utili
+## Comandi Git Utili
 
 Una volta collegato a GitHub, questi comandi sono utili:
 
@@ -187,7 +187,7 @@ git merge feature/nuova-pagina
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Problema: "fatal: 'origin' does not appear to be a git repository"
 
@@ -227,7 +227,7 @@ git init
 
 ---
 
-## 📚 Documentazione Post-Deployment
+## Documentazione Post-Deployment
 
 Una volta online, gli utenti potranno:
 
@@ -240,7 +240,7 @@ Una volta online, gli utenti potranno:
 
 ---
 
-## ✨ Features Post-Launch
+## Features Post-Launch
 
 Una volta online, puoi:
 
@@ -254,7 +254,7 @@ Una volta online, puoi:
 
 ---
 
-## 🎉 Prossimi Step
+## Prossimi Step
 
 ### Short Term (Questa settimana)
 - [ ] Push su GitHub
@@ -276,7 +276,7 @@ Una volta online, puoi:
 
 ---
 
-## 📞 Supporto
+## Supporto
 
 Se hai domande:
 
@@ -292,6 +292,6 @@ Se hai domande:
 
 ---
 
-### 🎯 Il tuo progetto DreamCar è pronto per il mondo! 🌍
+### Il tuo progetto DreamCar è pronto per il mondo!
 
-Buona fortuna con la pubblicazione su GitHub! 🚀
+Buona fortuna con la pubblicazione su GitHub!

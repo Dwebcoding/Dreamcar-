@@ -3,13 +3,13 @@
 **Aggiornamento:** Gennaio 2026  
 **File:** `js/models.expanded.js`
 
-## 📊 Statistiche
+## Statistiche
 
 - **Totale marche:** 86
 - **Migliaia di modelli** disponibili
 - **Copertura globale:** Europa, Asia, America, Australia
 
-## 🚗 Marche Incluse
+## Marche Incluse
 
 ### Marche Premium e di Lusso
 - Acura, Alfa Romeo, Aston Martin, Audi, Bentley, BMW, Cadillac, Genesis, Infiniti, Jaguar, Lamborghini, Land Rover, Lexus, Lincoln, Lotus, Maserati, Maybach, McLaren, Mercedes-Benz, Porsche, Rolls-Royce
@@ -34,7 +34,7 @@
 ### Altre Marche Globali
 - Ferrari, Lamborghini, Maserati, McLaren, SsangYong
 
-## 🌟 Caratteristiche Principali
+## Caratteristiche Principali
 
 ### Marche con più modelli espansi:
 1. **Mercedes-Benz** - Oltre 150 modelli e varianti (tutte le classi A-S, AMG, EQ elettriche, Maybach)
@@ -47,14 +47,14 @@
 8. **Nissan** - Oltre 70 modelli (GT-R, Z, SUV)
 
 ### Categorie complete:
-- ✅ **SUV/Crossover** - Tutti i principali modelli globali
-- ✅ **Berline** - Da compatte a luxury
-- ✅ **Sportive** - Da entry-level a hypercar
-- ✅ **Elettriche** - Tesla, Lucid, NIO, BYD, EQ, e-tron, ID, Ioniq, ecc.
-- ✅ **Pickup** - Ford F-Series, Ram, Chevrolet Silverado, Toyota Hilux/Tundra
-- ✅ **Van/Commerciali** - Ford Transit, Mercedes Sprinter, Citroën Jumper
+- **SUV/Crossover** - Tutti i principali modelli globali
+- **Berline** - Da compatte a luxury
+- **Sportive** - Da entry-level a hypercar
+- **Elettriche** - Tesla, Lucid, NIO, BYD, EQ, e-tron, ID, Ioniq, ecc.
+- **Pickup** - Ford F-Series, Ram, Chevrolet Silverado, Toyota Hilux/Tundra
+- **Van/Commerciali** - Ford Transit, Mercedes Sprinter, Citroën Jumper
 
-## 📝 Esempi di Espansione
+## Esempi di Espansione
 
 ### Prima (esempi):
 - **Ferrari:** 28 modelli
@@ -66,7 +66,7 @@
 - **Lamborghini:** 32 modelli (inclusi Miura, Countach, Diablo, Murciélago, Aventador SVJ, Urus S)
 - **Tesla:** 16 varianti (Model S/3/X/Y con tutte le versioni Long Range, Performance, Plaid)
 
-## 🔧 Utilizzo
+## Utilizzo
 
 Il database viene caricato automaticamente nella pagina **preventivo.html** tramite:
 
@@ -79,20 +79,20 @@ Il selettore auto popola dinamicamente:
 1. **Select "Marca"** - 86 marche in ordine alfabetico
 2. **Select "Modello"** - Modelli filtrati in base alla marca selezionata
 
-## 🌍 Copertura Geografica
+## Copertura Geografica
 
 - **Europa:** 35+ marche (Italia, Germania, Francia, UK, Spagna, Repubblica Ceca, Svezia, Romania)
 - **Asia:** 30+ marche (Giappone, Corea del Sud, Cina, India)
 - **America:** 20+ marche (USA)
 - **Globale:** Marche premium e sportive disponibili worldwide
 
-## 🚀 Performance
+## Performance
 
 - Database ottimizzato con IIFE module pattern
 - Popolamento veloce con DocumentFragment
 - Compatibile con CommonJS (Node.js) e browser
 
-## 📅 Aggiornamenti Futuri
+## Aggiornamenti Futuri
 
 Il database può essere ulteriormente espanso con:
 - Import automatico da API CarQuery o Wikidata

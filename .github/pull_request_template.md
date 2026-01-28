@@ -1,24 +1,24 @@
 # Pull Request
 
-## 📝 Descrizione
+## Descrizione
 Descrivi in modo chiaro le modifiche apportate.
 
-## 🎯 Tipo di Modifica
+## Tipo di Modifica
 Seleziona le opzioni rilevanti:
 
-- [ ] 🐛 Bug fix (modifica che risolve un problema)
-- [ ] ✨ Nuova feature (modifica che aggiunge funzionalità)
-- [ ] 💥 Breaking change (fix o feature che causa malfunzionamenti in funzionalità esistenti)
-- [ ] 📝 Documentazione (solo modifiche alla documentazione)
-- [ ] 🎨 Style (formattazione, punto e virgola mancanti, ecc.)
-- [ ] ♻️ Refactoring (nessuna modifica funzionale)
-- [ ] ⚡ Performance (miglioramenti prestazioni)
-- [ ] ✅ Test (aggiunta o correzione test)
+- [ ] Bug fix (modifica che risolve un problema)
+- [ ] Nuova feature (modifica che aggiunge funzionalità)
+- [ ] Breaking change (fix o feature che causa malfunzionamenti in funzionalità esistenti)
+- [ ] Documentazione (solo modifiche alla documentazione)
+- [ ] Style (formattazione, punto e virgola mancanti, ecc.)
+- [ ] Refactoring (nessuna modifica funzionale)
+- [ ] Performance (miglioramenti prestazioni)
+- [ ] Test (aggiunta o correzione test)
 
-## 🔗 Issue Collegato
+## Issue Collegato
 Fixes #(numero issue)
 
-## ✅ Checklist
+## Checklist
 
 ### Codice
 - [ ] Il codice segue le linee guida del progetto
@@ -45,7 +45,7 @@ Fixes #(numero issue)
 - [ ] CHANGELOG aggiornato
 - [ ] Commenti JSDoc aggiunti/aggiornati
 
-## 📸 Screenshots
+## Screenshots
 (Se applicabile) Aggiungi screenshots che mostrano le modifiche.
 
 ### Prima
@@ -54,15 +54,15 @@ Fixes #(numero issue)
 ### Dopo
 <!-- Screenshot dopo le modifiche -->
 
-## 📋 Note per i Reviewers
+## Note per i Reviewers
 Eventuali note aggiuntive per chi revisionerà la PR.
 
-## 🧪 Come Testare
+## Come Testare
 1. Clona il branch
 2. Apri index.html
 3. ...
 
-## 📱 Test su Device
+## Test su Device
 - [ ] Desktop (1920x1080)
 - [ ] Tablet (768x1024)
 - [ ] Mobile (375x667)

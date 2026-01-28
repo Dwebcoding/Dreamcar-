@@ -107,11 +107,11 @@ const generateFile = async (carModels) => {
  * Funzione principale
  */
 const run = async () => {
-    console.log('🚗 CarQuery API Importer\n');
-    console.log('📥 Scaricamento marche...');
+    console.log('CarQuery API Importer\n');
+    console.log('Scaricamento marche...');
 
     const makes = await getMakes();
-    console.log(`✓ Trovate ${makes.length} marche\n`);
+    console.log(`Trovate ${makes.length} marche\n`);
 
     const carModels = {};
     let processed = 0;
@@ -130,32 +130,32 @@ const run = async () => {
                 carModels[makeName] = [...new Set(models.map(m => m.model_name))]
                     .sort((a, b) => a.localeCompare(b, 'it'));
                 
-                console.log(` ✓ ${carModels[makeName].length} modelli`);
+                console.log(` ${carModels[makeName].length} modelli`);
             } else {
-                console.log(' ⚠ Nessun modello trovato');
+                console.log(' Nessun modello trovato');
             }
 
             // Pausa per evitare rate limiting
             await new Promise(resolve => setTimeout(resolve, CONFIG.REQUEST_DELAY));
         } catch (error) {
-            console.log(` ✗ Errore: ${error.message}`);
+            console.log(` Errore: ${error.message}`);
         }
     }
 
-    console.log('\n📝 Generazione file...');
+    console.log('\nGenerazione file...');
     await generateFile(carModels);
 
-    console.log(`✓ File generato: ${CONFIG.OUTPUT_FILE}`);
-    console.log(`✓ Marche importate: ${Object.keys(carModels).length}`);
+    console.log(`File generato: ${CONFIG.OUTPUT_FILE}`);
+    console.log(`Marche importate: ${Object.keys(carModels).length}`);
     
     const totalModels = Object.values(carModels).reduce((sum, models) => sum + models.length, 0);
-    console.log(`✓ Modelli totali: ${totalModels}\n`);
-    console.log('✅ Importazione completata con successo!');
+    console.log(`Modelli totali: ${totalModels}\n`);
+    console.log('Importazione completata con successo!');
 };
 
 // Esecuzione con gestione errori
 run().catch(error => {
-    console.error('\n❌ Errore fatale:', error.message);
+    console.error('\nErrore fatale:', error.message);
     console.error(error.stack);
     process.exit(1);
 });

@@ -180,13 +180,13 @@ Tutti i file Markdown contengono:
 
 **Esempi di cambio:**
 ```markdown
-Prima: ✨ Sito web completo
+Prima: Sito web completo
 Dopo:  Sito web completo
 
-Prima: 📱 Menu mobile hamburger
+Prima: Menu mobile hamburger
 Dopo:  Menu mobile hamburger
 
-Prima: 🚀 Deployment guide
+Prima: Deployment guide
 Dopo:  Deployment guide
 ```
 
