@@ -19,7 +19,6 @@
         piva: '04604880163',
         
         socialLinks: {
-            facebook: 'https://www.facebook.com/p/BonfantiCar-2-100063807321803/',
             instagram: 'https://www.instagram.com/bonfanti_car/',
             whatsapp: '393486127749'
         },
@@ -169,3 +168,4 @@
     window.FooterConfig = FOOTER_CONFIG;
 
 })();
+
