@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventivo - DreamCar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../js/models.expanded.js"></script>
+    <script src="../js/car-selector.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="navbar-logo-link"><img src="../Images/Logo/Dream Car Logo Nero Rosso.png" alt="DreamCar Logo" class="navbar-logo"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="preventivo.html" class="active">Preventivo</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="quote-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h1 class="form-title">Richiesta di Preventivo</h1>
+                    <p class="form-subtitle">Compila il modulo per ricevere un preventivo dettagliato per la tua auto.</p>
+                    
+                    <form id="repair-quote-form" class="quote-form">
+                        <fieldset>
+                            <legend>Informazioni Personali</legend>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Nome e Cognome</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefono</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Informazioni Veicolo</legend>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div class="form-group">
+                                    <label for="make">Marca</label>
+                                    <select id="make" name="make" required>
+                                        <option value="" disabled selected>Seleziona Marca</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="model">Modello</label>
+                                    <select id="model" name="model" required disabled>
+                                        <option value="" disabled selected>Seleziona Modello</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Anno</label>
+                                    <select id="year" name="year" required>
+                                        <option value="">Seleziona Anno</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trim">Allestimento</label>
+                                    <select id="trim" name="trim">
+                                        <option value="">Seleziona Allestimento</option>
+                                        <option value="base">Base</option>
+                                        <option value="sport">Sport</option>
+                                        <option value="luxury">Luxury</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="altro">Altro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="insurance-company">Compagnia Assicurativa</label>
+                                    <select id="insurance-company" name="insurance-company">
+                                        <option value="">Seleziona Compagnia</option>
+                                        <option value="Assicurazioni Generali">Assicurazioni Generali</option>
+                                        <option value="Intesa Sanpaolo">Intesa Sanpaolo</option>
+                                        <option value="Allianz">Allianz</option>
+                                        <option value="Poste Vita">Poste Vita</option>
+                                        <option value="UnipolSai">UnipolSai</option>
+                                        <option value="Altro">Altro</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Sinistri Precedenti</legend>
+                            <div class="form-group">
+                                <label>Hai avuto sinistri precedenti?</label>
+                                <div class="radio-group">
+                                    <label for="accidents-yes"><input type="radio" id="accidents-yes" name="previous-accidents" value="si"> Si</label>
+                                    <label for="accidents-no"><input type="radio" id="accidents-no" name="previous-accidents" value="no" checked> No</label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="previous-accidents-description-group" style="display: none;">
+                                <label for="previous-accidents-description">Descrivi i sinistri precedenti</label>
+                                <textarea id="previous-accidents-description" name="previous-accidents-description" rows="3" placeholder="Descrivi brevemente..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Dettagli Richiesta</legend>
+                            <div class="form-group">
+                                <label for="description">Descrizione del Danno</label>
+                                <textarea id="description" name="description" rows="6" placeholder="Descrivi i dettagli dell'intervento richiesto..." required></textarea>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group-full">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacy" required>
+                                Acconsento al trattamento dei dati secondo la <a href="privacy-policy.html" target="_blank">privacy policy</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-group-full">
+                            <button type="submit" class="btn-submit">Invia Richiesta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../Images/Logo/Dream Car Logo Bianco.png" alt="DreamCar Logo" class="footer-logo">
+                    <p class="footer-description">La tua destinazione per servizi automobilistici di eccellenza.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Link Utili</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="servizi.html">Servizi</a></li>
+                        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Informazioni Legali</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="termini-di-servizio.html">Termini di Servizio</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                    <p class="footer-vat">P.IVA: 12345678901</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Developer</h3>
+                    <ul class="developer-links">
+                        <li><a href="mailto:Dwebcoding@gmail.com" title="Contatta via Email"><i class="fas fa-envelope"></i> Email</a></li>
+                        <li><a href="https://github.com/Dwebcoding" target="_blank" rel="noopener noreferrer" title="GitHub Profile"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://wa.me/393882566019" target="_blank" rel="noopener noreferrer" title="Contatta su WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright 2026 DreamCar. Tutti i diritti riservati.</p>
+                <p class="developed-by">Engineered & Designed by <a href="https://github.com/Dwebcoding" target="_blank" rel="noopener noreferrer">Dwebcoding</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/models.generated.js"></script>
+    <script src="../js/quote-form.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

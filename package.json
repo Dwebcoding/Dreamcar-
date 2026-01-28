@@ -1,0 +1,39 @@
+{
+  "name": "dreamcar-site",
+  "version": "1.0.0",
+  "description": "Sito web moderno e responsive per DreamCar - Officina Auto di Eccellenza",
+  "main": "index.html",
+  "scripts": {
+    "import-cars": "node scripts/import-carquery.js",
+    "start": "echo 'Apri index.html nel browser o usa un server locale come Live Server'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "car",
+    "auto",
+    "officina",
+    "carrozzeria",
+    "preventivo",
+    "riparazioni",
+    "manutenzione",
+    "dreamcar"
+  ],
+  "author": "DreamCar Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/dreamcar-site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/dreamcar-site/issues"
+  },
+  "homepage": "https://github.com/yourusername/dreamcar-site#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
