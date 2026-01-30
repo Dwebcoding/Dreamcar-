@@ -43,6 +43,8 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
   table[class="responsive-table"] { width: 100% !important; }
   td[class="responsive-td"] { display: block !important; width: 100% !important; padding: 8px 0 !important; }
   .label-mobile { display: block !important; font-weight: bold !important; margin-bottom: 4px !important; }
+  .col-container { display: block !important; width: 100% !important; }
+  .col-50 { display: block !important; width: 100% !important; padding-right: 0 !important; margin-bottom: 16px !important; }
   h2 { font-size: 16px !important; }
   h3 { font-size: 14px !important; }
 }
@@ -70,108 +72,120 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
 
                 <tr>
                     <td style="padding:20px 16px;">
-                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Dati Cliente</h3>
-                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                        <!-- RIGA 1: Cliente e Veicolo affiancati -->
+                        <table width="100%" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Nome</span>
+                                <td class="col-50" style="width:48%;padding-right:16px;vertical-align:top;">
+                                    <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Dati Cliente</h3>
+                                    <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Nome</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                <strong>{{customer_name}}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Email</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{customer_email}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Telefono</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{customer_phone}}
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    <strong>{{customer_name}}</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Email</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{customer_email}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Telefono</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{customer_phone}}
-                                </td>
-                            </tr>
-                        </table>
-
-                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;">
-
-                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Veicolo</h3>
-                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Marca</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    <strong>{{vehicle_make}}</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Modello</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{vehicle_model}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Anno</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{vehicle_year}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
-                                    <span class="label-mobile">Allestimento</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{vehicle_trim}}
-                                </td>
-                            </tr>
-                        </table>
-
-                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;">
-
-                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Assicurazione & Sinistri</h3>
-                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
-                                    <span class="label-mobile">Compagnia</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{insurance_company}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
-                                    <span class="label-mobile">Sinistri precedenti</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{previous_accidents}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
-                                    <span class="label-mobile">Dettagli</span>
-                                </td>
-                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
-                                    {{accidents_description}}
+                                <td class="col-50" style="width:48%;padding-left:16px;vertical-align:top;border-left:1px solid #e5e7eb;">
+                                    <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Veicolo</h3>
+                                    <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Marca</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                <strong>{{vehicle_make}}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Modello</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{vehicle_model}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Anno</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{vehicle_year}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                                <span class="label-mobile">Allestimento</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{vehicle_trim}}
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                         </table>
 
                         <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;">
 
-                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Descrizione Danno</h3>
-                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;color:#111827;font-size:14px;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word;">
-                            {{damage_description}}
-                        </div>
+                        <!-- RIGA 2: Assicurazione e Descrizione Danno affiancati -->
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="col-50" style="width:48%;padding-right:16px;vertical-align:top;">
+                                    <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Assicurazione & Sinistri</h3>
+                                    <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
+                                                <span class="label-mobile">Compagnia</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{insurance_company}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
+                                                <span class="label-mobile">Sinistri precedenti</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{previous_accidents}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
+                                                <span class="label-mobile">Dettagli sinistri</span>
+                                            </td>
+                                            <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                                {{accidents_description}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td class="col-50" style="width:48%;padding-left:16px;vertical-align:top;border-left:1px solid #e5e7eb;">
+                                    <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Descrizione Danno</h3>
+                                    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;color:#111827;font-size:13px;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word;height:100%;box-sizing:border-box;">
+                                        {{damage_description}}
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
 
