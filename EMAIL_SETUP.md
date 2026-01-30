@@ -215,9 +215,9 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
 ```javascript
 const EMAILJS_CONFIG = {
     SERVICE_ID: 'gmail',                    // Il tuo Service ID
-    TEMPLATE_ID: 'template_abc123xyz',      // Il tuo Template ID
-    PUBLIC_KEY: 'xyz123abc',                // La tua Public Key
-    SHOP_EMAIL: 'info@dreamcar.it'          // L'email dell'autofficina
+    TEMPLATE_ID: 'template_Dreamcar',      // Il tuo Template ID
+    PUBLIC_KEY: '675zZLSFZI89sVE3b',                // La tua Public Key
+    SHOP_EMAIL: 'Dwebcoding@gmail.com'          // L'email dell'autofficina
 };
 ```
 
