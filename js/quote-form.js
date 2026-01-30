@@ -174,6 +174,12 @@
             errors.push('Il nome è obbligatorio');
         }
 
+        // Controlla cognome
+        const surname = form.querySelector('#surname');
+        if (!surname.value.trim()) {
+            errors.push('Il cognome è obbligatorio');
+        }
+
         // Controlla email
         const email = form.querySelector('#email');
         if (!email.value.trim()) {
@@ -276,6 +282,7 @@
             // Raccoglie i dati del form
             const formData = {
                 name: form.querySelector('#name').value,
+                surname: form.querySelector('#surname').value,
                 email: form.querySelector('#email').value,
                 phone: form.querySelector('#phone').value,
                 make: form.querySelector('#make').value,
