@@ -163,6 +163,88 @@
     };
 
     /**
+     * Gestisce il submit del form
+     */
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        
+        const form = e.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+
+        try {
+            // Disabilita il bottone durante l'invio
+            submitButton.disabled = true;
+            submitButton.textContent = '⏳ Invio...';
+
+            // Raccoglie i dati del form
+            const formData = {
+                name: form.querySelector('#name').value,
+                email: form.querySelector('#email').value,
+                phone: form.querySelector('#phone').value,
+                make: form.querySelector('#make').value,
+                model: form.querySelector('#model').value,
+                year: form.querySelector('#year').value,
+                trim: form.querySelector('#trim').value,
+                insuranceCompany: form.querySelector('#insurance-company').value,
+                previousAccidents: form.querySelector('[name="previous-accidents"]:checked')?.value || 'no',
+                accidentsDescription: form.querySelector('#previous-accidents-description').value,
+                description: form.querySelector('#description').value
+            };
+
+            // Controlla se EmailJS è disponibile
+            if (typeof window.EmailSender === 'undefined') {
+                throw new Error('Modulo EmailSender non disponibile');
+            }
+
+            // Invia il preventivo via email
+            await window.EmailSender.sendQuote(formData);
+
+            // Mostra messaggio di successo
+            submitButton.textContent = '✅ Preventivo Inviato!';
+            submitButton.style.backgroundColor = '#4CAF50';
+            
+            // Reset del form
+            form.reset();
+
+            // Messaggio utente
+            alert('Preventivo inviato con successo! Ti contatteremo presto.');
+
+            // Ripristina il bottone dopo 3 secondi
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+                submitButton.style.backgroundColor = '';
+            }, 3000);
+
+        } catch (error) {
+            console.error('Errore nell\'invio:', error);
+            submitButton.textContent = '❌ Errore nell\'invio';
+            submitButton.style.backgroundColor = '#f44336';
+
+            // Messaggio di errore
+            alert('Errore nell\'invio del preventivo. Prova di nuovo o contattaci direttamente.');
+
+            // Ripristina il bottone dopo 3 secondi
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+                submitButton.style.backgroundColor = '';
+            }, 3000);
+        }
+    };
+
+    /**
+     * Collega il gestore di submit del form
+     */
+    const initFormSubmit = () => {
+        const form = document.querySelector('#repair-quote-form');
+        if (form) {
+            form.addEventListener('submit', handleFormSubmit);
+        }
+    };
+
+    /**
      * Inizializza tutte le funzionalità del form
      */
     const init = () => {
@@ -170,6 +252,7 @@
         initYearSelector();
         initInsuranceCompanyToggle();
         initAccidentsToggle();
+        initFormSubmit();
     };
 
     // Inizializza quando il DOM è pronto
