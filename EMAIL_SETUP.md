@@ -36,31 +36,72 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
 4. Nel campo **Email Content**, incolla questo template:
 
 ```html
-<h2>📋 Nuova Richiesta di Preventivo</h2>
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:24px;font-family:Arial,Helvetica,sans-serif;">
+    <tr>
+        <td align="center">
+            <table width="620" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);">
+                <tr>
+                    <td style="background:#0f172a;color:#fff;padding:18px 24px;">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td style="vertical-align:middle;">
+                                    <h2 style="margin:0;font-size:20px;">📋 Nuova Richiesta di Preventivo</h2>
+                                    <p style="margin:6px 0 0;font-size:12px;color:#cbd5e1;">Data: {{submission_date}}</p>
+                                </td>
+                                <td align="right" style="vertical-align:middle;">
+                                    <img src="https://dwebcoding.github.io/Dreamcar-/Images/Logo/Dream%20Car%20Logo%20Nero%20Rosso.png" alt="DreamCar" style="height:40px;display:block;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
-<h3>Dati Cliente</h3>
-<p><strong>Nome:</strong> {{customer_name}}</p>
-<p><strong>Email:</strong> {{customer_email}}</p>
-<p><strong>Telefono:</strong> {{customer_phone}}</p>
+                <tr>
+                    <td style="padding:22px 24px;">
+                        <h3 style="margin:0 0 10px;color:#111827;">Dati Cliente</h3>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
+                            <tr><td style="padding:6px 0;color:#6b7280;width:150px;">Nome</td><td style="padding:6px 0;color:#111827;"><strong>{{customer_name}}</strong></td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;color:#111827;">{{customer_email}}</td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Telefono</td><td style="padding:6px 0;color:#111827;">{{customer_phone}}</td></tr>
+                        </table>
 
-<h3>Veicolo</h3>
-<p><strong>Marca:</strong> {{vehicle_make}}</p>
-<p><strong>Modello:</strong> {{vehicle_model}}</p>
-<p><strong>Anno:</strong> {{vehicle_year}}</p>
-<p><strong>Allestimento:</strong> {{vehicle_trim}}</p>
+                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
 
-<h3>Informazioni Sinistri</h3>
-<p><strong>Sinistri Precedenti:</strong> {{previous_accidents}}</p>
-<p><strong>Dettagli:</strong> {{accidents_description}}</p>
+                        <h3 style="margin:0 0 10px;color:#111827;">Veicolo</h3>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
+                            <tr><td style="padding:6px 0;color:#6b7280;width:150px;">Marca</td><td style="padding:6px 0;color:#111827;"><strong>{{vehicle_make}}</strong></td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Modello</td><td style="padding:6px 0;color:#111827;">{{vehicle_model}}</td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Anno</td><td style="padding:6px 0;color:#111827;">{{vehicle_year}}</td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Allestimento</td><td style="padding:6px 0;color:#111827;">{{vehicle_trim}}</td></tr>
+                        </table>
 
-<h3>Assicurazione</h3>
-<p><strong>Compagnia:</strong> {{insurance_company}}</p>
+                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
 
-<h3>Descrizione Danno</h3>
-<p>{{damage_description}}</p>
+                        <h3 style="margin:0 0 10px;color:#111827;">Assicurazione & Sinistri</h3>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
+                            <tr><td style="padding:6px 0;color:#6b7280;width:180px;">Compagnia</td><td style="padding:6px 0;color:#111827;">{{insurance_company}}</td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Sinistri precedenti</td><td style="padding:6px 0;color:#111827;">{{previous_accidents}}</td></tr>
+                            <tr><td style="padding:6px 0;color:#6b7280;">Dettagli</td><td style="padding:6px 0;color:#111827;">{{accidents_description}}</td></tr>
+                        </table>
 
-<hr>
-<p><small>Data: {{submission_date}}</small></p>
+                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
+
+                        <h3 style="margin:0 0 10px;color:#111827;">Descrizione Danno</h3>
+                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;color:#111827;font-size:14px;line-height:1.5;">
+                            {{damage_description}}
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="background:#0f172a;color:#e5e7eb;padding:12px 24px;font-size:12px;">
+                        DreamCar • Richiesta generata automaticamente
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 ```
 
 5. Salva il template e annota il **Template ID** (es: `template_abc123xyz`)
