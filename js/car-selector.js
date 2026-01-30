@@ -57,7 +57,9 @@
     const initCarSelector = () => {
         // Verifica disponibilità di carModels
         if (typeof carModels === 'undefined') {
-            console.warn('carModels non è definito. Il selettore non verrà inizializzato.');
+            console.warn('carModels non è definito. Attendo caricamento...');
+            // Riprova dopo 100ms per permettere il caricamento del file models
+            setTimeout(initCarSelector, 100);
             return;
         }
 
@@ -69,6 +71,8 @@
             console.warn('Elementi select non trovati');
             return;
         }
+
+        console.log('✓ Database auto caricato:', Object.keys(carModels).length, 'marche');
 
         // Popola marche
         const makes = Object.keys(carModels).sort((a, b) => a.localeCompare(b, 'it'));
