@@ -14,10 +14,10 @@
 
     // ⚙️ CONFIGURAZIONE - DA PERSONALIZZARE
     const EMAILJS_CONFIG = {
-        SERVICE_ID: 'YOUR_SERVICE_ID', // Es: gmail
-        TEMPLATE_ID: 'YOUR_TEMPLATE_ID', // Es: template_xxx
-        PUBLIC_KEY: 'YOUR_PUBLIC_KEY', // Es: abc123xyz
-        SHOP_EMAIL: 'info@dreamcar.it' // Email dell'autofficina
+        SERVICE_ID: 'gmail', // Es: gmail
+        TEMPLATE_ID: 'template_Dreamcar', // Es: template_xxx
+        PUBLIC_KEY: '675zZLSFZI89sVE3b', // Es: abc123xyz
+        SHOP_EMAIL: 'Dwebcoding@gmail.com' // Email dell'autofficina
     };
 
     /**
