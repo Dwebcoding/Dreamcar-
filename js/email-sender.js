@@ -24,9 +24,9 @@
      * Verifica se EmailJS è configurato correttamente
      */
     const isConfigured = () => {
-        return EMAILJS_CONFIG.SERVICE_ID !== 'YOUR_SERVICE_ID' &&
-               EMAILJS_CONFIG.TEMPLATE_ID !== 'YOUR_TEMPLATE_ID' &&
-               EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY';
+        return EMAILJS_CONFIG.SERVICE_ID !== 'gmail' &&
+               EMAILJS_CONFIG.TEMPLATE_ID !== 'template_Dreamcar' &&
+               EMAILJS_CONFIG.PUBLIC_KEY !== '675zZLSFZI89sVE3b';
     };
 
     /**
@@ -83,7 +83,7 @@
             // Aggiunge l'email dell'autofficina come destinatario
             quoteData.to_email = EMAILJS_CONFIG.SHOP_EMAIL;
 
-            console.log('📧 Invio email preventivo...', quoteData);
+            console.log('Invio email preventivo...', quoteData);
 
             // Invia l'email
             const response = await emailjs.send(
@@ -92,11 +92,11 @@
                 quoteData
             );
 
-            console.log('✅ Email inviata con successo!', response);
+            console.log('Email inviata con successo!', response);
             return response;
 
         } catch (error) {
-            console.error('❌ Errore nell\'invio dell\'email:', error);
+            console.error('Errore nell\'invio dell\'email:', error);
             throw error;
         }
     };
@@ -121,6 +121,6 @@
         config: EMAILJS_CONFIG
     };
 
-    console.log('📧 Email Sender Module caricato');
+    console.log('Email Sender Module caricato');
 
 })();
