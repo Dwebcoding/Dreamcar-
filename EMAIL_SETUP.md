@@ -44,7 +44,7 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
   td[class="responsive-td"] { display: block !important; width: 100% !important; padding: 8px 0 !important; }
   .label-mobile { display: block !important; font-weight: bold !important; margin-bottom: 4px !important; }
   .col-container { display: block !important; width: 100% !important; }
-  .col-50 { display: block !important; width: 100% !important; padding-right: 0 !important; margin-bottom: 16px !important; }
+  .col-50 { display: block !important; width: 100% !important; padding-right: 0 !important; margin-bottom: 16px !important; border-left: none !important; }
   h2 { font-size: 16px !important; }
   h3 { font-size: 14px !important; }
 }
