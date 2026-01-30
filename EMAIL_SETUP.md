@@ -36,19 +36,31 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
 4. Nel campo **Email Content**, incolla questo template:
 
 ```html
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:24px;font-family:Arial,Helvetica,sans-serif;">
+<style>
+@media only screen and (max-width: 600px) {
+  .mobile-hidden { display: none !important; }
+  .mobile-center { text-align: center !important; }
+  table[class="responsive-table"] { width: 100% !important; }
+  td[class="responsive-td"] { display: block !important; width: 100% !important; padding: 8px 0 !important; }
+  .label-mobile { display: block !important; font-weight: bold !important; margin-bottom: 4px !important; }
+  h2 { font-size: 16px !important; }
+  h3 { font-size: 14px !important; }
+}
+</style>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:20px;font-family:Arial,Helvetica,sans-serif;">
     <tr>
         <td align="center">
-            <table width="620" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);">
+            <table width="100%" cellpadding="0" cellspacing="0" style="max-width:620px;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);">
                 <tr>
-                    <td style="background:#1f2937;color:#fff;padding:18px 24px;">
+                    <td style="background:#1f2937;color:#fff;padding:18px 16px;">
                         <table width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td style="vertical-align:middle;">
                                     <h2 style="margin:0;font-size:20px;color:#ffffff;">📋 Nuova Richiesta di Preventivo</h2>
                                     <p style="margin:6px 0 0;font-size:12px;color:#ffffff;">Data: {{submission_date}}</p>
                                 </td>
-                                <td align="right" style="vertical-align:middle;">
+                                <td align="right" style="vertical-align:middle;padding-left:10px;" class="mobile-hidden">
                                     <img src="https://dwebcoding.github.io/Dreamcar-/Images/Logo/Dream%20Car%20Logo%20Nero%20Rosso.png" alt="DreamCar" style="height:60px;display:block;">
                                 </td>
                             </tr>
@@ -57,44 +69,114 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
                 </tr>
 
                 <tr>
-                    <td style="padding:22px 24px;">
-                        <h3 style="margin:0 0 10px;color:#111827;">Dati Cliente</h3>
-                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
-                            <tr><td style="padding:6px 0;color:#6b7280;width:150px;">Nome</td><td style="padding:6px 0;color:#111827;"><strong>{{customer_name}}</strong></td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;color:#111827;">{{customer_email}}</td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Telefono</td><td style="padding:6px 0;color:#111827;">{{customer_phone}}</td></tr>
+                    <td style="padding:20px 16px;">
+                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Dati Cliente</h3>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Nome</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    <strong>{{customer_name}}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Email</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{customer_email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Telefono</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{customer_phone}}
+                                </td>
+                            </tr>
                         </table>
 
-                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
+                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;">
 
-                        <h3 style="margin:0 0 10px;color:#111827;">Veicolo</h3>
-                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
-                            <tr><td style="padding:6px 0;color:#6b7280;width:150px;">Marca</td><td style="padding:6px 0;color:#111827;"><strong>{{vehicle_make}}</strong></td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Modello</td><td style="padding:6px 0;color:#111827;">{{vehicle_model}}</td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Anno</td><td style="padding:6px 0;color:#111827;">{{vehicle_year}}</td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Allestimento</td><td style="padding:6px 0;color:#111827;">{{vehicle_trim}}</td></tr>
+                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Veicolo</h3>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Marca</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    <strong>{{vehicle_make}}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Modello</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{vehicle_model}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Anno</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{vehicle_year}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:140px;" class="responsive-td">
+                                    <span class="label-mobile">Allestimento</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{vehicle_trim}}
+                                </td>
+                            </tr>
                         </table>
 
-                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
+                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;">
 
-                        <h3 style="margin:0 0 10px;color:#111827;">Assicurazione & Sinistri</h3>
-                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
-                            <tr><td style="padding:6px 0;color:#6b7280;width:180px;">Compagnia</td><td style="padding:6px 0;color:#111827;">{{insurance_company}}</td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Sinistri precedenti</td><td style="padding:6px 0;color:#111827;">{{previous_accidents}}</td></tr>
-                            <tr><td style="padding:6px 0;color:#6b7280;">Dettagli</td><td style="padding:6px 0;color:#111827;">{{accidents_description}}</td></tr>
+                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Assicurazione & Sinistri</h3>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;" class="responsive-table">
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
+                                    <span class="label-mobile">Compagnia</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{insurance_company}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
+                                    <span class="label-mobile">Sinistri precedenti</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{previous_accidents}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 0;color:#6b7280;width:160px;" class="responsive-td">
+                                    <span class="label-mobile">Dettagli</span>
+                                </td>
+                                <td style="padding:6px 0;color:#111827;" class="responsive-td">
+                                    {{accidents_description}}
+                                </td>
+                            </tr>
                         </table>
 
-                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0;">
+                        <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;">
 
-                        <h3 style="margin:0 0 10px;color:#111827;">Descrizione Danno</h3>
-                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;color:#111827;font-size:14px;line-height:1.5;">
+                        <h3 style="margin:0 0 12px;color:#111827;font-size:16px;">Descrizione Danno</h3>
+                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;color:#111827;font-size:14px;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word;">
                             {{damage_description}}
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td style="background:#1f2937;color:#e5e7eb;padding:12px 24px;font-size:12px;">
+                    <td style="background:#1f2937;color:#e5e7eb;padding:12px 16px;font-size:12px;text-align:center;">
                         DreamCar • Richiesta generata automaticamente
                     </td>
                 </tr>
