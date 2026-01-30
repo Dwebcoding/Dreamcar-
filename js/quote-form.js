@@ -163,6 +163,95 @@
     };
 
     /**
+     * Valida il form prima dell'invio
+     */
+    const validateForm = (form) => {
+        const errors = [];
+
+        // Controlla nome
+        const name = form.querySelector('#name');
+        if (!name.value.trim()) {
+            errors.push('Il nome è obbligatorio');
+        }
+
+        // Controlla email
+        const email = form.querySelector('#email');
+        if (!email.value.trim()) {
+            errors.push('L\'email è obbligatoria');
+        } else if (!email.value.includes('@')) {
+            errors.push('Email non valida');
+        }
+
+        // Controlla telefono
+        const phone = form.querySelector('#phone');
+        if (!phone.value.trim()) {
+            errors.push('Il telefono è obbligatorio');
+        }
+
+        // Controlla marca
+        const make = form.querySelector('#make');
+        if (!make.value) {
+            errors.push('La marca del veicolo è obbligatoria');
+        }
+
+        // Controlla modello
+        const model = form.querySelector('#model');
+        if (!model.value) {
+            errors.push('Il modello del veicolo è obbligatorio');
+        }
+
+        // Controlla anno
+        const year = form.querySelector('#year');
+        if (!year.value) {
+            errors.push('L\'anno del veicolo è obbligatorio');
+        }
+
+        // Controlla allestimento
+        const trim = form.querySelector('#trim');
+        if (!trim.value) {
+            errors.push('L\'allestimento è obbligatorio');
+        }
+
+        // Controlla compagnia assicurativa
+        const insurance = form.querySelector('#insurance-company');
+        if (!insurance.value) {
+            errors.push('La compagnia assicurativa è obbligatoria');
+        }
+
+        // Controlla sinistri precedenti
+        const accidentsYes = form.querySelector('#accidents-yes');
+        if (accidentsYes.checked) {
+            const accidentsDesc = form.querySelector('#previous-accidents-description');
+            if (!accidentsDesc.value.trim()) {
+                errors.push('La descrizione dei sinistri precedenti è obbligatoria');
+            }
+        }
+
+        // Controlla descrizione danno
+        const description = form.querySelector('#description');
+        if (!description.value.trim()) {
+            errors.push('La descrizione del danno è obbligatoria');
+        }
+
+        // Controlla privacy
+        const privacy = form.querySelector('[name="privacy"]');
+        if (!privacy.checked) {
+            errors.push('Devi accettare la privacy policy');
+        }
+
+        return errors;
+    };
+
+    /**
+     * Mostra gli errori di validazione
+     */
+    const showValidationErrors = (errors) => {
+        const errorMessage = 'Per favore completa tutti i campi obbligatori:\n\n' + 
+                           errors.map((err, i) => `${i + 1}. ${err}`).join('\n');
+        alert(errorMessage);
+    };
+
+    /**
      * Gestisce il submit del form
      */
     const handleFormSubmit = async (e) => {
@@ -171,6 +260,13 @@
         const form = e.target;
         const submitButton = form.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
+
+        // Valida il form
+        const validationErrors = validateForm(form);
+        if (validationErrors.length > 0) {
+            showValidationErrors(validationErrors);
+            return;
+        }
 
         try {
             // Disabilita il bottone durante l'invio
