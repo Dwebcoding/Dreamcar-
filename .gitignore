@@ -8,7 +8,7 @@ yarn.lock
 
 # Auto-generated files
 js/models.generated.js
-js/models.expanded.js
+# js/models.expanded.js - RIMOSSO: necessario per GitHub Pages
 
 # Environment variables
 .env
