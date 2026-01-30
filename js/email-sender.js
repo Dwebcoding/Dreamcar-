@@ -24,8 +24,8 @@
      * Verifica se EmailJS è configurato correttamente
      */
     const isConfigured = () => {
-        return EMAILJS_CONFIG.SERVICE_ID !== 'gmail' &&
-               EMAILJS_CONFIG.TEMPLATE_ID !== 'template_Dreamcar' &&
+        return EMAILJS_CONFIG.SERVICE_ID !== 'gmail' ||
+               EMAILJS_CONFIG.TEMPLATE_ID !== 'template_Dreamcar' ||
                EMAILJS_CONFIG.PUBLIC_KEY !== '675zZLSFZI89sVE3b';
     };
 
@@ -34,7 +34,7 @@
      */
     const formatQuoteData = (formData) => {
         return {
-            customer_name: formData.name || 'N/A',
+            customer_name: `${formData.name || ''} ${formData.surname || ''}`.trim() || 'N/A',
             customer_email: formData.email || 'N/A',
             customer_phone: formData.phone || 'N/A',
             vehicle_make: formData.make || 'N/A',
