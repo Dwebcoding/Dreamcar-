@@ -17,16 +17,17 @@
         SERVICE_ID: 'gmail', // Es: gmail
         TEMPLATE_ID: 'template_Dreamcar', // Es: template_xxx
         PUBLIC_KEY: '675zZLSFZI89sVE3b', // Es: abc123xyz
-        SHOP_EMAIL: 'Dwebcoding@gmail.com' // Email dell'autofficina
+        SHOP_EMAIL: 'd.webcoding@gmail.com' // Email dell'autofficina
     };
 
     /**
      * Verifica se EmailJS è configurato correttamente
      */
     const isConfigured = () => {
-        return EMAILJS_CONFIG.SERVICE_ID !== 'gmail' ||
-               EMAILJS_CONFIG.TEMPLATE_ID !== 'template_Dreamcar' ||
-               EMAILJS_CONFIG.PUBLIC_KEY !== '675zZLSFZI89sVE3b';
+        return !!(EMAILJS_CONFIG.PUBLIC_KEY && 
+                  EMAILJS_CONFIG.SERVICE_ID && 
+                  EMAILJS_CONFIG.TEMPLATE_ID &&
+                  EMAILJS_CONFIG.SHOP_EMAIL);
     };
 
     /**
