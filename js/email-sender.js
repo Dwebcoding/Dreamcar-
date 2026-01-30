@@ -1,18 +1,7 @@
-/**
- * Email Sender Module
- * Invia preventivi via email usando EmailJS
- * 
- * SETUP REQUIRED:
- * 1. Registrati su https://www.emailjs.com (gratis)
- * 2. Crea un Email Service (Gmail o altro provider)
- * 3. Crea un Email Template con le variabili
- * 4. Aggiorna le costanti EMAILJS_* qui sotto
- */
-
 (function() {
     'use strict';
 
-    // ⚙️ CONFIGURAZIONE - DA PERSONALIZZARE
+    // CONFIGURAZIONE - DA PERSONALIZZARE
     const EMAILJS_CONFIG = {
         SERVICE_ID: 'service_kw4sq2i', // Es: gmail
         TEMPLATE_ID: 'template_Dreamcar', // Es: template_xxx
@@ -64,7 +53,7 @@
     const sendQuote = async (formData) => {
         // Verifica configurazione
         if (!isConfigured()) {
-            console.warn('⚠️ EmailJS non è configurato. Contatta l\'amministratore.');
+            console.warn('EmailJS non è configurato. Contatta l\'amministratore.');
             return Promise.reject('EmailJS non configurato');
         }
 

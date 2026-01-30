@@ -304,7 +304,7 @@
             await window.EmailSender.sendQuote(formData);
 
             // Mostra messaggio di successo
-            submitButton.textContent = '✅ Preventivo Inviato!';
+            submitButton.textContent = 'Preventivo Inviato!';
             submitButton.style.backgroundColor = '#4CAF50';
             
             // Reset del form
@@ -322,7 +322,7 @@
 
         } catch (error) {
             console.error('Errore nell\'invio:', error);
-            submitButton.textContent = '❌ Errore nell\'invio';
+            submitButton.textContent = 'Errore nell\'invio';
             submitButton.style.backgroundColor = '#f44336';
 
             // Messaggio di errore

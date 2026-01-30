@@ -138,7 +138,7 @@
                     <p class="copyright">&copy; 2026 ${config.companyName} - Tutti i diritti riservati.</p>
                     <p class="footer-legal-info">P.IVA: ${config.piva}</p>
                     <p class="developed-by">Engineered & Designed by <a href="${config.developerLinks.github}" target="_blank" rel="noopener noreferrer">Dwebcoding</a></p>
-                    <p><a href="${basePath}pages/cookie-policy.html" class="cookie-settings-link">⚙️ Gestisci Cookie</a></p>
+                    <p><a href="${basePath}pages/cookie-policy.html" class="cookie-settings-link">Gestisci Cookie</a></p>
                 </div>
             </div>
         `;

@@ -72,7 +72,7 @@
             return;
         }
 
-        console.log('✓ Database auto caricato:', Object.keys(carModels).length, 'marche');
+        console.log('Database auto caricato:', Object.keys(carModels).length, 'marche');
 
         // Popola marche
         const makes = Object.keys(carModels).sort((a, b) => a.localeCompare(b, 'it'));
