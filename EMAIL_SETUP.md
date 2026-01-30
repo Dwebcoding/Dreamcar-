@@ -60,7 +60,7 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
                                     <h2 style="margin:0;font-size:20px;color:#ffffff;">📋 Nuova Richiesta di Preventivo</h2>
                                     <p style="margin:6px 0 0;font-size:12px;color:#ffffff;">Data: {{submission_date}}</p>
                                 </td>
-                                <td align="right" style="vertical-align:middle;padding-left:10px;" class="mobile-hidden">
+                                <td align="right" style="vertical-align:middle;padding-left:10px;">
                                     <img src="https://dwebcoding.github.io/Dreamcar-/Images/Logo/Dream%20Car%20Logo%20Nero%20Rosso.png" alt="DreamCar" style="height:60px;display:block;">
                                 </td>
                             </tr>
