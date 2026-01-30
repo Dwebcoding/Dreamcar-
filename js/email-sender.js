@@ -14,7 +14,7 @@
 
     // ⚙️ CONFIGURAZIONE - DA PERSONALIZZARE
     const EMAILJS_CONFIG = {
-        SERVICE_ID: 'Gmail', // Es: gmail
+        SERVICE_ID: 'Gmail_Dreamcar', // Es: gmail
         TEMPLATE_ID: 'template_Dreamcar', // Es: template_xxx
         PUBLIC_KEY: 'WmW6GZu0mgbFXIXgw', // Es: abc123xyz
         SHOP_EMAIL: 'd.webcoding@gmail.com' // Email dell'autofficina
