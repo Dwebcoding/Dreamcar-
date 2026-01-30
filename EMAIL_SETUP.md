@@ -41,7 +41,7 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
         <td align="center">
             <table width="620" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);">
                 <tr>
-                    <td style="background:#0f172a;color:#fff;padding:18px 24px;">
+                    <td style="background:#1f2937;color:#fff;padding:18px 24px;">
                         <table width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td style="vertical-align:middle;">
@@ -94,7 +94,7 @@ Questo documento spiega come configurare EmailJS per inviare i preventivi alla t
                 </tr>
 
                 <tr>
-                    <td style="background:#0f172a;color:#e5e7eb;padding:12px 24px;font-size:12px;">
+                    <td style="background:#1f2937;color:#e5e7eb;padding:12px 24px;font-size:12px;">
                         DreamCar • Richiesta generata automaticamente
                     </td>
                 </tr>
