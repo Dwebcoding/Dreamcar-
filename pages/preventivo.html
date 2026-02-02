@@ -38,7 +38,7 @@
                     <h1 class="form-title">Richiesta di Preventivo</h1>
                     <p class="form-subtitle">Compila il modulo per ricevere un preventivo dettagliato per la tua auto.</p>
                     
-                    <form id="repair-quote-form" class="quote-form">
+                    <form id="repair-quote-form" class="quote-form" enctype="multipart/form-data">
                         <fieldset>
                             <legend>Informazioni Personali</legend>
                             <div class="form-grid">
@@ -62,72 +62,15 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Informazioni Veicolo</legend>
-                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                                <div class="form-group">
-                                    <label for="make">Marca</label>
-                                    <select id="make" name="make" required>
-                                        <option value="" disabled selected>Seleziona Marca</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="model">Modello</label>
-                                    <select id="model" name="model" required disabled>
-                                        <option value="" disabled selected>Seleziona Modello</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="year">Anno</label>
-                                    <select id="year" name="year" required>
-                                        <option value="">Seleziona Anno</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="trim">Allestimento</label>
-                                    <select id="trim" name="trim" required>
-                                        <option value="" disabled selected>Seleziona Allestimento</option>
-                                        <option value="base">Base</option>
-                                        <option value="sport">Sport</option>
-                                        <option value="luxury">Luxury</option>
-                                        <option value="premium">Premium</option>
-                                        <option value="altro">Altro</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="insurance-company">Compagnia Assicurativa</label>
-                                    <select id="insurance-company" name="insurance-company" required>
-                                        <option value="" disabled selected>Seleziona Compagnia</option>
-                                        <option value="Assicurazioni Generali">Assicurazioni Generali</option>
-                                        <option value="Intesa Sanpaolo">Intesa Sanpaolo</option>
-                                        <option value="Allianz">Allianz</option>
-                                        <option value="Poste Vita">Poste Vita</option>
-                                        <option value="UnipolSai">UnipolSai</option>
-                                        <option value="Altro">Altro</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Sinistri Precedenti</legend>
-                            <div class="form-group">
-                                <label>Hai avuto sinistri precedenti?</label>
-                                <div class="radio-group">
-                                    <label for="accidents-yes"><input type="radio" id="accidents-yes" name="previous-accidents" value="si"> Si</label>
-                                    <label for="accidents-no"><input type="radio" id="accidents-no" name="previous-accidents" value="no" checked> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group" id="previous-accidents-description-group" style="display: none;">
-                                <label for="previous-accidents-description">Descrivi i sinistri precedenti</label>
-                                <textarea id="previous-accidents-description" name="previous-accidents-description" rows="3" placeholder="Descrivi brevemente..."></textarea>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
                             <legend>Dettagli Richiesta</legend>
                             <div class="form-group">
                                 <label for="description">Descrizione del Danno</label>
                                 <textarea id="description" name="description" rows="6" placeholder="Descrivi i dettagli dell'intervento richiesto..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attachments">Allegati (foto o file)</label>
+                                <input type="file" id="attachments" name="attachments" multiple accept="image/*,.pdf,.doc,.docx">
+                                <small class="form-hint">Puoi caricare più file (foto o documenti).</small>
                             </div>
                         </fieldset>
 
@@ -154,8 +97,6 @@
     </footer>
 
     <!-- Scripts caricati in ordine -->
-    <script src="../js/models.expanded.js"></script>
-    <script src="../js/car-selector.js"></script>
     <script src="../js/email-sender.js"></script>
     <script src="../js/quote-form.js"></script>
     <script src="../js/script.js"></script>

@@ -35,6 +35,7 @@
             previous_accidents: formData.previousAccidents || 'No',
             accidents_description: formData.accidentsDescription || 'N/A',
             damage_description: formData.description || 'N/A',
+            attachments_list: formData.attachments || 'Nessun allegato',
             submission_date: new Date().toLocaleDateString('it-IT', {
                 year: 'numeric',
                 month: 'long',

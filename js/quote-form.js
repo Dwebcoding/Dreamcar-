@@ -64,15 +64,15 @@
      * Inizializza i selettori auto (marca e modello)
      */
     const initCarSelectors = () => {
-        if (typeof carModels === 'undefined') {
-            console.warn('carModels non definito');
-            return;
-        }
-
         const makeSelect = document.querySelector(CONFIG.SELECTORS.form.make);
         const modelSelect = document.querySelector(CONFIG.SELECTORS.form.model);
 
         if (!makeSelect || !modelSelect) return;
+
+        if (typeof carModels === 'undefined') {
+            console.warn('carModels non definito');
+            return;
+        }
 
         // Popola marche
         const makes = Object.keys(carModels);
@@ -168,80 +168,82 @@
     const validateForm = (form) => {
         const errors = [];
 
+        const getField = (selector) => form.querySelector(selector);
+
         // Controlla nome
-        const name = form.querySelector('#name');
-        if (!name.value.trim()) {
+        const name = getField('#name');
+        if (name && !name.value.trim()) {
             errors.push('Il nome è obbligatorio');
         }
 
         // Controlla cognome
-        const surname = form.querySelector('#surname');
-        if (!surname.value.trim()) {
+        const surname = getField('#surname');
+        if (surname && !surname.value.trim()) {
             errors.push('Il cognome è obbligatorio');
         }
 
         // Controlla email
-        const email = form.querySelector('#email');
-        if (!email.value.trim()) {
+        const email = getField('#email');
+        if (email && !email.value.trim()) {
             errors.push('L\'email è obbligatoria');
-        } else if (!email.value.includes('@')) {
+        } else if (email && !email.value.includes('@')) {
             errors.push('Email non valida');
         }
 
         // Controlla telefono
-        const phone = form.querySelector('#phone');
-        if (!phone.value.trim()) {
+        const phone = getField('#phone');
+        if (phone && !phone.value.trim()) {
             errors.push('Il telefono è obbligatorio');
         }
 
         // Controlla marca
-        const make = form.querySelector('#make');
-        if (!make.value) {
+        const make = getField('#make');
+        if (make && !make.value) {
             errors.push('La marca del veicolo è obbligatoria');
         }
 
         // Controlla modello
-        const model = form.querySelector('#model');
-        if (!model.value) {
+        const model = getField('#model');
+        if (model && !model.value) {
             errors.push('Il modello del veicolo è obbligatorio');
         }
 
         // Controlla anno
-        const year = form.querySelector('#year');
-        if (!year.value) {
+        const year = getField('#year');
+        if (year && !year.value) {
             errors.push('L\'anno del veicolo è obbligatorio');
         }
 
         // Controlla allestimento
-        const trim = form.querySelector('#trim');
-        if (!trim.value) {
+        const trim = getField('#trim');
+        if (trim && !trim.value) {
             errors.push('L\'allestimento è obbligatorio');
         }
 
         // Controlla compagnia assicurativa
-        const insurance = form.querySelector('#insurance-company');
-        if (!insurance.value) {
+        const insurance = getField('#insurance-company');
+        if (insurance && !insurance.value) {
             errors.push('La compagnia assicurativa è obbligatoria');
         }
 
         // Controlla sinistri precedenti
-        const accidentsYes = form.querySelector('#accidents-yes');
-        if (accidentsYes.checked) {
-            const accidentsDesc = form.querySelector('#previous-accidents-description');
-            if (!accidentsDesc.value.trim()) {
+        const accidentsYes = getField('#accidents-yes');
+        if (accidentsYes && accidentsYes.checked) {
+            const accidentsDesc = getField('#previous-accidents-description');
+            if (accidentsDesc && !accidentsDesc.value.trim()) {
                 errors.push('La descrizione dei sinistri precedenti è obbligatoria');
             }
         }
 
         // Controlla descrizione danno
-        const description = form.querySelector('#description');
-        if (!description.value.trim()) {
+        const description = getField('#description');
+        if (description && !description.value.trim()) {
             errors.push('La descrizione del danno è obbligatoria');
         }
 
         // Controlla privacy
         const privacy = form.querySelector('[name="privacy"]');
-        if (!privacy.checked) {
+        if (privacy && !privacy.checked) {
             errors.push('Devi accettare la privacy policy');
         }
 
@@ -280,19 +282,26 @@
             submitButton.textContent = '⏳ Invio...';
 
             // Raccoglie i dati del form
+            const getValue = (selector) => form.querySelector(selector)?.value || '';
+            const attachmentsInput = form.querySelector('#attachments');
+            const attachmentsList = attachmentsInput
+                ? Array.from(attachmentsInput.files || []).map((file) => file.name).join(', ')
+                : '';
+
             const formData = {
-                name: form.querySelector('#name').value,
-                surname: form.querySelector('#surname').value,
-                email: form.querySelector('#email').value,
-                phone: form.querySelector('#phone').value,
-                make: form.querySelector('#make').value,
-                model: form.querySelector('#model').value,
-                year: form.querySelector('#year').value,
-                trim: form.querySelector('#trim').value,
-                insuranceCompany: form.querySelector('#insurance-company').value,
+                name: getValue('#name'),
+                surname: getValue('#surname'),
+                email: getValue('#email'),
+                phone: getValue('#phone'),
+                make: getValue('#make'),
+                model: getValue('#model'),
+                year: getValue('#year'),
+                trim: getValue('#trim'),
+                insuranceCompany: getValue('#insurance-company'),
                 previousAccidents: form.querySelector('[name="previous-accidents"]:checked')?.value || 'no',
-                accidentsDescription: form.querySelector('#previous-accidents-description').value,
-                description: form.querySelector('#description').value
+                accidentsDescription: getValue('#previous-accidents-description'),
+                description: getValue('#description'),
+                attachments: attachmentsList
             };
 
             // Controlla se EmailJS è disponibile

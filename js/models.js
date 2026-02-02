@@ -1,17 +1,3 @@
-/**
- * Importa marche/modelli da Wikidata via SPARQL e genera:
- *  - ../js/models.generated.js  (file JS pronto da includere al posto di models.js)
- *
- * Requisiti:
- *  - Node.js 14+
- *  - Eseguire: npm install node-fetch@2
- *
- * Esegui (da workspace): node scripts\import-wikidata-models.js
- *
- * Nota: la query SPARQL cerca elementi che sono (o derivano da) modelli di automobile
- * e che hanno una proprietà "manufacturer" (P176). La copertura dipende dai dati Wikidata.
- */
-
 const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
