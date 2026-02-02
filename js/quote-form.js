@@ -313,6 +313,61 @@
         alert(errorMessage);
     };
 
+    const escapeHtml = (value) => {
+        const div = document.createElement('div');
+        div.textContent = value;
+        return div.innerHTML;
+    };
+
+    const readFileAsDataUrl = (file) => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(reader.error);
+        reader.readAsDataURL(file);
+    });
+
+    const buildAttachmentsPayload = async (files) => {
+        if (!files || files.length === 0) {
+            return {
+                attachmentsList: '',
+                attachmentsHtml: 'Nessun allegato'
+            };
+        }
+
+        const fileArray = Array.from(files);
+        const imageItems = [];
+        const otherFiles = [];
+
+        for (const file of fileArray) {
+            if (file.type && file.type.startsWith('image/')) {
+                const dataUrl = await readFileAsDataUrl(file);
+                imageItems.push({ name: file.name, dataUrl });
+            } else {
+                otherFiles.push(file.name);
+            }
+        }
+
+        const imageHtml = imageItems.map((item) => `
+            <div style="display:inline-block;margin:6px;text-align:center;">
+                <img src="${item.dataUrl}" alt="${escapeHtml(item.name)}" style="width:200px;height:200px;object-fit:cover;border-radius:8px;border:1px solid #e5e7eb;display:block;" />
+                <div style="font-size:12px;color:#6b7280;margin-top:4px;max-width:200px;word-break:break-word;">${escapeHtml(item.name)}</div>
+            </div>
+        `).join('');
+
+        const otherFilesHtml = otherFiles.length > 0
+            ? `<div style="margin-top:8px;font-size:12px;color:#111827;">Altri file: ${otherFiles.map(escapeHtml).join(', ')}</div>`
+            : '';
+
+        const attachmentsHtml = (imageHtml || otherFilesHtml)
+            ? `${imageHtml}${otherFilesHtml}`
+            : 'Nessun allegato';
+
+        return {
+            attachmentsList: fileArray.map((file) => file.name).join(', '),
+            attachmentsHtml
+        };
+    };
+
     /**
      * Gestisce il submit del form
      */
@@ -338,9 +393,7 @@
             // Raccoglie i dati del form
             const getValue = (selector) => form.querySelector(selector)?.value || '';
             const attachmentsInput = form.querySelector('#attachments');
-            const attachmentsList = attachmentsInput
-                ? Array.from(attachmentsInput.files || []).map((file) => file.name).join(', ')
-                : '';
+            const { attachmentsList, attachmentsHtml } = await buildAttachmentsPayload(attachmentsInput?.files);
 
             const formData = {
                 name: getValue('#name'),
@@ -355,7 +408,8 @@
                 previousAccidents: form.querySelector('[name="previous-accidents"]:checked')?.value || 'no',
                 accidentsDescription: getValue('#previous-accidents-description'),
                 description: getValue('#description'),
-                attachments: attachmentsList
+                attachments: attachmentsList,
+                attachmentsHtml: attachmentsHtml
             };
 
             // Controlla se EmailJS è disponibile
