@@ -19,7 +19,9 @@
                 accidentsYes: '#accidents-yes',
                 accidentsNo: '#accidents-no',
                 accidentsDescriptionGroup: '#previous-accidents-description-group',
-                accidentsDescription: '#previous-accidents-description'
+                accidentsDescription: '#previous-accidents-description',
+                attachmentsInput: '#attachments',
+                attachmentsPreview: '#attachments-preview'
             }
         },
         PLACEHOLDERS: {
@@ -27,6 +29,8 @@
             model: 'Seleziona Modello'
         }
     };
+
+    let attachmentsPreviewContainer = null;
 
     /**
      * Utility per creare elementi option
@@ -160,6 +164,56 @@
         accidentsYes.addEventListener('change', toggleDescription);
         accidentsNo.addEventListener('change', toggleDescription);
         toggleDescription(); // Check iniziale
+    };
+
+    /**
+     * Mostra anteprime degli allegati
+     */
+    const initAttachmentsPreview = () => {
+        const input = document.querySelector(CONFIG.SELECTORS.form.attachmentsInput);
+        attachmentsPreviewContainer = document.querySelector(CONFIG.SELECTORS.form.attachmentsPreview);
+
+        if (!input || !attachmentsPreviewContainer) return;
+
+        const clearPreview = () => {
+            attachmentsPreviewContainer.innerHTML = '';
+        };
+
+        const renderPreview = (files) => {
+            clearPreview();
+
+            if (!files || files.length === 0) return;
+
+            Array.from(files).forEach((file) => {
+                const item = document.createElement('div');
+                item.className = 'attachments-preview-item';
+
+                if (file.type && file.type.startsWith('image/')) {
+                    const img = document.createElement('img');
+                    img.className = 'attachments-preview-image';
+                    img.alt = file.name;
+                    img.src = URL.createObjectURL(file);
+                    img.onload = () => URL.revokeObjectURL(img.src);
+                    item.appendChild(img);
+                } else {
+                    const fileBadge = document.createElement('div');
+                    fileBadge.className = 'attachments-preview-file';
+                    fileBadge.textContent = '📄';
+                    item.appendChild(fileBadge);
+                }
+
+                const caption = document.createElement('div');
+                caption.className = 'attachments-preview-name';
+                caption.textContent = file.name;
+                item.appendChild(caption);
+
+                attachmentsPreviewContainer.appendChild(item);
+            });
+        };
+
+        input.addEventListener('change', (event) => {
+            renderPreview(event.target.files);
+        });
     };
 
     /**
@@ -319,6 +373,10 @@
             // Reset del form
             form.reset();
 
+            if (attachmentsPreviewContainer) {
+                attachmentsPreviewContainer.innerHTML = '';
+            }
+
             // Messaggio utente
             alert('Preventivo inviato con successo! Ti contatteremo presto.');
 
@@ -364,6 +422,7 @@
         initYearSelector();
         initInsuranceCompanyToggle();
         initAccidentsToggle();
+        initAttachmentsPreview();
         initFormSubmit();
     };
 
