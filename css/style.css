@@ -140,7 +140,7 @@ a:hover {
     .full-screen-hero {
         width: 100vw;
         margin-left: calc(-50vw + 50%);
-        background-image: url('../Images/BackGround/mobile version/10db141d-1f9d-49c9-958c-9fd62d7fd898.png');
+        background-image: url('../Images/BackGround/mobile-version/10db141d-1f9d-49c9-958c-9fd62d7fd898.png');
     }
 
     .main-nav {
@@ -285,7 +285,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../Images/BackGround/desktop version/b30fb7b8-4ec6-4808-a33c-62e1d82f1d00.png');
+    background-image: url('../Images/BackGround/desktop-version/b30fb7b8-4ec6-4808-a33c-62e1d82f1d00.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
