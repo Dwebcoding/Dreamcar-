@@ -141,6 +141,8 @@ a:hover {
         width: 100vw;
         margin-left: calc(-50vw + 50%);
         background-image: url('../Images/BackGround/mobile-version/10db141d-1f9d-49c9-958c-9fd62d7fd898.png');
+        background-size: cover;
+        background-position: center center;
     }
 
     .main-nav {
