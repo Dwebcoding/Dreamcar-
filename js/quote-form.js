@@ -487,7 +487,10 @@
             // Raccoglie i dati del form
             const getValue = (selector) => form.querySelector(selector)?.value || '';
             const attachmentsInput = form.querySelector('#attachments');
-            const { attachmentsList, attachmentsHtml } = attachmentsInput?.files
+            console.log('🔍 Form Submit - attachmentsInput:', attachmentsInput);
+            console.log('📁 Files length:', attachmentsInput?.files?.length || 0);
+            console.log('📁 Files object:', attachmentsInput?.files);
+            const { attachmentsList, attachmentsHtml } = attachmentsInput?.files && attachmentsInput.files.length > 0
                 ? await buildAttachmentsLinks(attachmentsInput.files)
                 : { attachmentsList: 'Nessun allegato', attachmentsHtml: 'Nessun allegato' };
 
