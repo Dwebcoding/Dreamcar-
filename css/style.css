@@ -300,10 +300,9 @@ h2 {
         min-height: calc(100svh - 80px);
         background-image: url('../Images/BackGround/immagini home/mobile-hero.png');
         background-attachment: scroll;
-        background-size: contain;
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        background-color: #000000;
     }
 
     .full-screen-hero .container {
