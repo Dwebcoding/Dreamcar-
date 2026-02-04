@@ -393,7 +393,9 @@
             // Raccoglie i dati del form
             const getValue = (selector) => form.querySelector(selector)?.value || '';
             const attachmentsInput = form.querySelector('#attachments');
-            const { attachmentsList, attachmentsHtml } = await buildAttachmentsPayload(attachmentsInput?.files);
+            const attachmentsList = attachmentsInput?.files 
+                ? Array.from(attachmentsInput.files).map(f => f.name).join(', ')
+                : 'Nessun allegato';
 
             const formData = {
                 name: getValue('#name'),
@@ -408,8 +410,7 @@
                 previousAccidents: form.querySelector('[name="previous-accidents"]:checked')?.value || 'no',
                 accidentsDescription: getValue('#previous-accidents-description'),
                 description: getValue('#description'),
-                attachments: attachmentsList,
-                attachmentsHtml: attachmentsHtml
+                attachments: attachmentsList
             };
 
             // Controlla se EmailJS è disponibile
