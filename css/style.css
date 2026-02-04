@@ -36,17 +36,7 @@ header .container {
     max-width: none; /* Remove max-width constraint */
 }
 
-.navbar-logo-link {
-    /* position: absolute; */ /* Removed absolute positioning */
-    /* left: 20px; */ /* Removed absolute positioning */
-    
-    /* margin-top: 100px; */
-}
 
-.nav-toggle {
-    /* position: absolute; */ /* Removed absolute positioning */
-    /* right: 20px; */ /* Removed absolute positioning */
-}
 
 .main-nav {
     flex-grow: 1; /* Allow main-nav to take up available space */
@@ -309,8 +299,10 @@ h2 {
     .full-screen-hero {
         min-height: calc(100svh - 80px);
         background-attachment: scroll;
-        background-size: cover;
-        background-position: center;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: #000000;
     }
 
     .full-screen-hero .container {
