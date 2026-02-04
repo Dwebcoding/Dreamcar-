@@ -141,14 +141,16 @@ a:hover {
         width: 100vw;
         margin-left: calc(-50vw + 50%);
         background-image: url('../Images/BackGround/mobile-version/10db141d-1f9d-49c9-958c-9fd62d7fd898.png');
-        background-size: 100% auto;
-        background-position: center top;
+        background-size: contain;
+        background-position: top center;
         background-repeat: no-repeat;
-        min-height: auto;
+        min-height: 100vh;
+        background-color: #121212;
     }
 
     .full-screen-hero .container {
-        height: auto;
+        height: 100vh;
+        padding-top: 80px;
     }
 
     .main-nav {
