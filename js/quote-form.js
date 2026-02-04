@@ -350,24 +350,67 @@
     };
 
     const buildAttachmentsLinks = async (files) => {
+        console.log('📎 buildAttachmentsLinks chiamato con', files?.length, 'file');
+        
         if (!files || files.length === 0) {
-            return 'Nessun allegato';
+            return {
+                attachmentsList: 'Nessun allegato',
+                attachmentsHtml: 'Nessun allegato'
+            };
         }
 
         if (!isCloudinaryConfigured()) {
-            console.warn('Cloudinary non configurato. Invio solo nomi file.');
-            return Array.from(files).map((file) => file.name).join(', ');
+            console.warn('⚠️ Cloudinary non configurato. Invio solo nomi file.');
+            const names = Array.from(files).map((file) => file.name);
+            return {
+                attachmentsList: names.join(', '),
+                attachmentsHtml: names.map((name) => escapeHtml(name)).join('<br>')
+            };
         }
+        
+        console.log('☁️ Upload su Cloudinary in corso...');
 
         const uploads = await Promise.all(
             Array.from(files).map(async (file) => {
+                console.log('⬆️ Uploading:', file.name, file.type);
                 const result = await uploadFileToCloudinary(file);
+                console.log('✅ Uploaded:', file.name, '→', result.secure_url);
                 const url = result.secure_url || result.url;
-                return `${file.name}: ${url}`;
+                return {
+                    name: file.name,
+                    url,
+                    isImage: !!(file.type && file.type.startsWith('image/'))
+                };
             })
         );
 
-        return uploads.join('\n');
+        const attachmentsList = uploads
+            .map((item) => `${item.name}: ${item.url}`)
+            .join('\n');
+
+        const attachmentsHtml = uploads
+            .map((item) => {
+                const safeName = escapeHtml(item.name);
+                const safeUrl = escapeHtml(item.url);
+                if (item.isImage) {
+                    return `<table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                            <tr>
+                                <td>
+                                    <p style="margin:0 0 8px;font-size:13px;color:#111827;font-weight:500;">${safeName}</p>
+                                    <img src="${safeUrl}" alt="${safeName}" style="max-width:100%;height:auto;border-radius:8px;border:1px solid #e5e7eb;display:block;" />
+                                </td>
+                            </tr>
+                        </table>`;
+                }
+                return `<p style="margin:6px 0;font-size:13px;">
+                        <a href="${safeUrl}" target="_blank" style="color:#346;text-decoration:none;font-weight:500;">📎 ${safeName}</a>
+                    </p>`;
+            })
+            .join('');
+        
+        console.log('📧 attachmentsHtml generato:', attachmentsHtml.substring(0, 200) + '...');
+
+        return { attachmentsList, attachmentsHtml };
     };
 
     const readFileAsDataUrl = (file) => new Promise((resolve, reject) => {
@@ -444,9 +487,9 @@
             // Raccoglie i dati del form
             const getValue = (selector) => form.querySelector(selector)?.value || '';
             const attachmentsInput = form.querySelector('#attachments');
-            const attachmentsList = attachmentsInput?.files
+            const { attachmentsList, attachmentsHtml } = attachmentsInput?.files
                 ? await buildAttachmentsLinks(attachmentsInput.files)
-                : 'Nessun allegato';
+                : { attachmentsList: 'Nessun allegato', attachmentsHtml: 'Nessun allegato' };
 
             const formData = {
                 name: getValue('#name'),
@@ -461,7 +504,8 @@
                 previousAccidents: form.querySelector('[name="previous-accidents"]:checked')?.value || 'no',
                 accidentsDescription: getValue('#previous-accidents-description'),
                 description: getValue('#description'),
-                attachments: attachmentsList
+                attachments: attachmentsList,
+                attachmentsHtml: attachmentsHtml
             };
 
             // Controlla se EmailJS è disponibile
