@@ -298,6 +298,7 @@ h2 {
 @media (max-width: 768px) {
     .full-screen-hero {
         min-height: calc(100svh - 80px);
+        background-image: url('../Images/BackGround/immagini home/mobile-hero.png');
         background-attachment: scroll;
         background-size: contain;
         background-position: center center;
