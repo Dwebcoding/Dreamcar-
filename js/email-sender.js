@@ -30,6 +30,11 @@
                 : str;
         };
 
+        // Prepara il messaggio con gli allegati
+        const attachmentInfo = formData.attachments && formData.attachments !== 'Nessun allegato'
+            ? `\n\n📎 FILE ALLEGATI:\n${formData.attachments}`
+            : '';
+
         return {
             customer_name: `${formData.name || ''} ${formData.surname || ''}`.trim() || 'N/A',
             customer_email: formData.email || 'N/A',
@@ -41,8 +46,7 @@
             insurance_company: formData.insuranceCompany || 'N/A',
             previous_accidents: formData.previousAccidents || 'No',
             accidents_description: truncate(formData.accidentsDescription, 200) || 'N/A',
-            damage_description: truncate(formData.description, 500) || 'N/A',
-            attachments_list: truncate(formData.attachments, 200) || 'Nessun allegato',
+            damage_description: truncate(formData.description, 500) + attachmentInfo || 'N/A',
             submission_date: new Date().toLocaleDateString('it-IT', {
                 year: 'numeric',
                 month: 'long',
