@@ -23,6 +23,13 @@
      * Formatta i dati del form in un oggetto per l'email
      */
     const formatQuoteData = (formData) => {
+        // Limita la lunghezza dei campi lunghi per stare sotto 50KB
+        const truncate = (str, maxLength = 500) => {
+            return str && str.length > maxLength 
+                ? str.substring(0, maxLength) + '...' 
+                : str;
+        };
+
         return {
             customer_name: `${formData.name || ''} ${formData.surname || ''}`.trim() || 'N/A',
             customer_email: formData.email || 'N/A',
@@ -33,9 +40,9 @@
             vehicle_trim: formData.trim || 'N/A',
             insurance_company: formData.insuranceCompany || 'N/A',
             previous_accidents: formData.previousAccidents || 'No',
-            accidents_description: formData.accidentsDescription || 'N/A',
-            damage_description: formData.description || 'N/A',
-            attachments_list: formData.attachments || 'Nessun allegato',
+            accidents_description: truncate(formData.accidentsDescription, 200) || 'N/A',
+            damage_description: truncate(formData.description, 500) || 'N/A',
+            attachments_list: truncate(formData.attachments, 200) || 'Nessun allegato',
             submission_date: new Date().toLocaleDateString('it-IT', {
                 year: 'numeric',
                 month: 'long',
