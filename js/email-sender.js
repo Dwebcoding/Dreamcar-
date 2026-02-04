@@ -83,8 +83,6 @@
             quoteData.to_email = EMAILJS_CONFIG.SHOP_EMAIL;
 
             console.log('Invio email preventivo...', quoteData);
-            console.log('📧 attachments_html inviato:', quoteData.attachments_html);
-            console.log('📧 Lunghezza HTML:', quoteData.attachments_html?.length || 0);
 
             // Invia l'email
             const response = await emailjs.send(
