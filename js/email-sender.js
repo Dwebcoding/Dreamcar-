@@ -36,7 +36,6 @@
             accidents_description: formData.accidentsDescription || 'N/A',
             damage_description: formData.description || 'N/A',
             attachments_list: formData.attachments || 'Nessun allegato',
-            attachments_html: formData.attachmentsHtml || 'Nessun allegato',
             submission_date: new Date().toLocaleDateString('it-IT', {
                 year: 'numeric',
                 month: 'long',
