@@ -280,26 +280,43 @@ h2 {
 }
 
 .full-screen-hero {
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('../Images/BackGround/desktop-version/b30fb7b8-4ec6-4808-a33c-62e1d82f1d00.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     z-index: 1;
-    padding: 0; /* Remove padding from hero when full screen */
+    padding: 0;
 }
 
 .full-screen-hero .container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    padding: 0; /* Remove padding */
+    min-height: 100svh;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .full-screen-hero {
+        min-height: calc(100svh - 80px);
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .full-screen-hero .container {
+        min-height: calc(100svh - 80px);
+        padding: 20px;
+    }
 }
 
 .full-screen-hero .hero-logo {
