@@ -8,6 +8,10 @@
     // Configurazione
     const CONFIG = {
         MIN_YEAR: 1960,
+        CLOUDINARY: {
+            cloudName: 'dwe2oncmy',
+            uploadPreset: 'dreamcar_unsigned'
+        },
         SELECTORS: {
             form: {
                 make: '#make',
@@ -319,6 +323,53 @@
         return div.innerHTML;
     };
 
+    const isCloudinaryConfigured = () => {
+        return !!(CONFIG.CLOUDINARY.cloudName && CONFIG.CLOUDINARY.uploadPreset &&
+            CONFIG.CLOUDINARY.cloudName !== 'YOUR_CLOUD_NAME' &&
+            CONFIG.CLOUDINARY.uploadPreset !== 'YOUR_UPLOAD_PRESET');
+    };
+
+    const uploadFileToCloudinary = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset', CONFIG.CLOUDINARY.uploadPreset);
+
+        const resourceType = file.type && file.type.startsWith('image/') ? 'image' : 'raw';
+        const endpoint = `https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY.cloudName}/${resourceType}/upload`;
+
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error('Upload Cloudinary fallito');
+        }
+
+        return response.json();
+    };
+
+    const buildAttachmentsLinks = async (files) => {
+        if (!files || files.length === 0) {
+            return 'Nessun allegato';
+        }
+
+        if (!isCloudinaryConfigured()) {
+            console.warn('Cloudinary non configurato. Invio solo nomi file.');
+            return Array.from(files).map((file) => file.name).join(', ');
+        }
+
+        const uploads = await Promise.all(
+            Array.from(files).map(async (file) => {
+                const result = await uploadFileToCloudinary(file);
+                const url = result.secure_url || result.url;
+                return `${file.name}: ${url}`;
+            })
+        );
+
+        return uploads.join('\n');
+    };
+
     const readFileAsDataUrl = (file) => new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => resolve(reader.result);
@@ -393,8 +444,8 @@
             // Raccoglie i dati del form
             const getValue = (selector) => form.querySelector(selector)?.value || '';
             const attachmentsInput = form.querySelector('#attachments');
-            const attachmentsList = attachmentsInput?.files 
-                ? Array.from(attachmentsInput.files).map(f => f.name).join(', ')
+            const attachmentsList = attachmentsInput?.files
+                ? await buildAttachmentsLinks(attachmentsInput.files)
                 : 'Nessun allegato';
 
             const formData = {
