@@ -2,6 +2,6 @@
     'use strict';
 
     window.DREAMCAR_CONFIG = Object.assign({
-        apiBaseUrl: ''
+        apiBaseUrl: 'https://dreamcar-backend.onrender.com'
     }, window.DREAMCAR_CONFIG || {});
 })();
