@@ -354,6 +354,7 @@
         
         if (!files || files.length === 0) {
             return {
+                attachments: [],
                 attachmentsList: 'Nessun allegato',
                 attachmentsHtml: 'Nessun allegato'
             };
@@ -363,6 +364,11 @@
             console.warn('⚠️ Cloudinary non configurato. Invio solo nomi file.');
             const names = Array.from(files).map((file) => file.name);
             return {
+                attachments: names.map((name) => ({
+                    name,
+                    url: '',
+                    isImage: false
+                })),
                 attachmentsList: names.join(', '),
                 attachmentsHtml: names.map((name) => escapeHtml(name)).join('<br>')
             };
@@ -410,7 +416,11 @@
         
         console.log('📧 attachmentsHtml generato:', attachmentsHtml.substring(0, 200) + '...');
 
-        return { attachmentsList, attachmentsHtml };
+        return {
+            attachments: uploads,
+            attachmentsList,
+            attachmentsHtml
+        };
     };
 
     const readFileAsDataUrl = (file) => new Promise((resolve, reject) => {
@@ -490,9 +500,9 @@
             console.log('🔍 Form Submit - attachmentsInput:', attachmentsInput);
             console.log('📁 Files length:', attachmentsInput?.files?.length || 0);
             console.log('📁 Files object:', attachmentsInput?.files);
-            const { attachmentsList, attachmentsHtml } = attachmentsInput?.files && attachmentsInput.files.length > 0
+            const { attachments, attachmentsList } = attachmentsInput?.files && attachmentsInput.files.length > 0
                 ? await buildAttachmentsLinks(attachmentsInput.files)
-                : { attachmentsList: 'Nessun allegato', attachmentsHtml: 'Nessun allegato' };
+                : { attachments: [], attachmentsList: 'Nessun allegato' };
 
             const formData = {
                 name: getValue('#name'),
@@ -507,8 +517,8 @@
                 previousAccidents: form.querySelector('[name="previous-accidents"]:checked')?.value || 'no',
                 accidentsDescription: getValue('#previous-accidents-description'),
                 description: getValue('#description'),
-                attachments: attachmentsList,
-                attachmentsHtml: attachmentsHtml
+                attachments,
+                attachmentsList
             };
 
             // Controlla se EmailJS è disponibile
